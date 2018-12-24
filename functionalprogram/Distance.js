@@ -11,4 +11,5 @@ const rl = readline.createInterface(
     rl.question('Enter value of y : ',(y)=>
     {
         utility.distance(x,y);
+        process.exit();
     }));

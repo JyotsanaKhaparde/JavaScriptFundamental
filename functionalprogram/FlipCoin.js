@@ -14,6 +14,7 @@ rl.question("Enter number of time flip coin: ",(flip)=>{
     }else{
         rl.question('enter number of time flip coin: ',(flip));
         utility.flipCoin(flip);
+        process.exit();
 
     }
 });

@@ -1,17 +1,10 @@
-const readline = require('readline');
+var utility =  require('../utility/Utility')
 
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
+var rl = utility.userInput();
 
-});
-
-var utility = require('../utility/Utility');
-
-
-//var utility = require('../utility/Utility');
 rl.question("please enter your name: ",(name)=>{
     utility.replceName(name);
+    process.exit();
 });
 
 /*rl.question("please enter your name: ",function(name)

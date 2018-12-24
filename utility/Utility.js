@@ -1,12 +1,21 @@
 module.exports = {
 
-    userInput: function(){
+  /*  userInput : function()
+    {
+        var rl = require('readline');
+        var prompt = rl.createInterface(process.stdin,process.stdout);
+        return prompt;
+    }*/
+
+    userInput(){
     const readline = require('readline');
 
     const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
-    })
+    
+    });
+    return rl;
     },
 
 
@@ -15,8 +24,12 @@ module.exports = {
 
     replceName(name){
         var n = name.length;
+        var str = "Hello <<username>> how are you?";
+        //var re = username;
         if(n >= 3){
-            console.log('Hello '+name+' how are you?');
+            var replace = str.replace("<<username>>",name);
+            console.log(replace);
+
             process.exit();
         }else{
             console.log('Please enter min 3 character');
@@ -47,7 +60,7 @@ module.exports = {
            console.log('Percentage of head= ',PercentageHead);
 			
             var PercentageTail  = (tail/n)*100;
-            console.log('Percentage of head= ',PercentageHead);
+            console.log('Percentage of tail= ',PercentageTail);
 
         
         
@@ -105,11 +118,274 @@ module.exports = {
   //**************************************************************************** 
 
   distance(x,y){
-      var distance;
+      var distance=0;
       distance = Math.sqrt(x*x + y*y);
       console.log('Euclidean distance: ',distance);
 
-  }
+  },
+
+  //*****************************************************************************
+
+  quadratic(a,b,c){
+    var root1 , root2, delta;
+    delta = ((b*b) - (4*a*c));
+
+    if(delta > 0){
+        root1 = ( - b + Math.sqrt(delta))/(2*a);
+        console.log('first root is: ',root1);
+
+        root2 = (- b - Math.sqrt(delta))/(2*a);
+        console.log('second root is: ',root2);
+
+    }else{
+        console.log('roots are imagionary');
+    }
+
+  },
+
+
+  //*****************************************************************
+
+  windChill(t,v){
+    var w;
+    w =  35.74 + 0.6215*t + ((0.4275*t) - 35.75) * Math.pow(v, 0.16);
+    console.log('windchill is: ',(w));
+  },
+
+
+  //**********************************************************************
+
+
+  gambler : function(stake,goal,trials)
+{
+    var bets = 0; // total number of bets made
+    var wins = 0; // total number of games won
+    // repeat trials times
+    for (var t = 0; t < trials; t++) 
+    {
+        // do one gambler's ruin simulation
+        var cash = stake;
+        while (cash > 0 && cash < goal) 
+        {
+            bets++;
+            if (Math.random() < 0.5) 
+            {
+                cash++; // win $1
+            }
+            else 
+            {   
+                cash--; // lose $1
+            }
+        }
+        if (cash == goal) 
+        {   
+            wins++; // did gambler go achieve desired goal?
+        }
+    }
+     // print results
+    console.log(wins + " wins of " + trials);
+    var a = 100.0 * wins;
+    var b = a / trials;
+    console.log("Percent of games won = " + b);
+    var c = 1.0 * bets;
+    var d = c / trials;
+    console.log("Avg of bets = " + d);
+},
+
     
 
-}
+      //**********************************************************************
+     
+
+     couponNumber(n){
+         var min=1;
+         var max = n;
+        var count=0
+        var j=0
+            var size = 0;
+            
+            var arr = new Array(n);
+                while(size < n){
+                    var x = (Math.round(Math.random()*(max - min ))+min);
+                    count=0
+                for(var i  = 0 ; i< arr.length ; i++){
+
+                    if(arr[i] == x || x < 0){
+                        count++
+                       break
+                    }  
+                }
+                if(count==0){
+                    arr[j++] =x;
+                    size++;
+                }
+            }
+
+            for(var i=0;i<arr.length;i++){
+                console.log(arr[i])
+            }
+             
+        },
+
+
+        //****************************************************************** 
+
+        triples(array,N){
+            var Count=0;
+            for(var i  = 0 ; i < N-2 ; i++){
+                for(var j = i+1 ; j < N-1 ; j++){
+                    for(var k = j+1 ; j < N ; j++){
+                        if(array[i]+array[j]+array[k] === 0){
+                            Count++;
+                            console.log("triplet are: "+array[i]+","+array[j]+","+array[k])
+                        }
+                    }
+                }
+            }
+               // console.log("triplet not found")
+          },
+
+
+          //*********************************************************************** 
+
+          harmonic(number){
+            var sum =0.0;
+            for(var i = 1 ; i <= number ;i++) {
+                sum = sum+ (1.0/i);
+            }
+            console.log('harmonic value is: ',(sum));
+         },
+
+
+         //*************************************************************************
+
+
+       //  permutationString(string){
+          //  iteration(string);
+           // getPermutations(string);
+
+            //to return all permutation of a string using iterative method
+
+            permutationsIteration(string)
+            {
+                var results = [];
+
+            if (string.length === 1)
+                {
+                    results.push(string);
+                    return results;
+                }
+
+            for (var i = 0; i < string.length; i++)
+            {   
+            var firstChar = string[i];
+            var otherChar = string.substring(0, i) + string.substring(i + 1);
+            var otherPermutations = permutationsIteration(otherChar);
+            for (var j = 0; j < otherPermutations.length; j++)
+            {
+                results.push(firstChar + otherPermutations[j]);
+            }
+            }
+                return results;
+           },
+          
+           
+            
+            //to return all permutation of a string using iterative method
+
+          /*  permutationRecursion(string) {
+
+                var r = 0 ;
+                var l = string.length-1;
+                if(l==r) {
+                    System.out.println(string);
+                }else {
+                    for(var i = l ; i <= r; i++) {
+                    str = swap(str , l ,i);
+                    permutation(str , l+1, r);
+                    str = swap(str, l, i);
+        
+                }
+                }
+             },
+        
+                swap(a, i, j) {
+                var temp;
+                var charArray = [];
+                charArray =  Array.from(a);
+                temp = charArray[i];
+                charArray[i] = charArray[j];
+                charArray[j] = temp;
+
+                
+                
+                return String.valueOf(charArray);
+            }, */
+
+
+            //********************************************************************** 
+
+
+            primeFactorization(number){
+                for(var i = 2; i< number; i++) 
+	             {
+	             while(number%i == 0) 
+	             {
+	                 console.log('Factor: ',i);
+	                 number = number/i;
+	            }
+	         }
+	            if(number>2) //for 35 and so on this condition will apply 
+	             {
+	                 console.log('Factor: ',number);
+	             } 
+	           
+            },
+
+
+            //*************************************************************************** 
+
+
+            
+
+/* Aim:Write a Stopwatch Program for measuring the time that elapses between
+
+     the start and end clicks
+
+* @author Jyotsana Khaparde
+
+* @version v10.11.0
+
+* @since 24/12/2018
+
+*/
+
+            time() 
+            {
+
+            var d = new Date();
+
+            t = d.getTime()
+
+            return t;
+
+            },
+
+            elapsedTime(start, stop) 
+            {
+
+             var elapsed = stop - start;
+
+            return elapsed;
+
+            },
+
+
+
+
+        
+    };
+
+         
+       
+
