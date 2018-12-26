@@ -3,17 +3,9 @@ var rl = utility.userInput();
 
 rl.question('Enter string : ',(string)=>
 {
-   // utility.permutationString(string);
- utility.permutationsIteration(string);
-
-   var permutation =  utility.permutationsIteration(string);
-   console.log("Total permutation: "+permutation.length);
-   console.log(permutation);
-   
-
-   // utility.permutationRecursion(string);
-   // process.exit();
- 
-   // Process.exit();
+    var permutation1 = utility.permutations(string);
+    console.log("Total permutation: "+permutation1.length);
+     console.log(permutation1);
+        process.exit();
 
 });

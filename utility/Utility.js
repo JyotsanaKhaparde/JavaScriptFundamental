@@ -257,73 +257,8 @@ module.exports = {
          },
 
 
-         //*************************************************************************
 
-
-       //  permutationString(string){
-          //  iteration(string);
-           // getPermutations(string);
-
-            //to return all permutation of a string using iterative method
-
-            permutationsIteration(string)
-            {
-                var results = [];
-
-            if (string.length === 1)
-                {
-                    results.push(string);
-                    return results;
-                }
-
-            for (var i = 0; i < string.length; i++)
-            {   
-            var firstChar = string[i];
-            var otherChar = string.substring(0, i) + string.substring(i + 1);
-            var otherPermutations = permutationsIteration(otherChar);
-            for (var j = 0; j < otherPermutations.length; j++)
-            {
-                results.push(firstChar + otherPermutations[j]);
-            }
-            }
-                return results;
-           },
-          
-           
-            
-            //to return all permutation of a string using iterative method
-
-          /*  permutationRecursion(string) {
-
-                var r = 0 ;
-                var l = string.length-1;
-                if(l==r) {
-                    System.out.println(string);
-                }else {
-                    for(var i = l ; i <= r; i++) {
-                    str = swap(str , l ,i);
-                    permutation(str , l+1, r);
-                    str = swap(str, l, i);
-        
-                }
-                }
-             },
-        
-                swap(a, i, j) {
-                var temp;
-                var charArray = [];
-                charArray =  Array.from(a);
-                temp = charArray[i];
-                charArray[i] = charArray[j];
-                charArray[j] = temp;
-
-                
-                
-                return String.valueOf(charArray);
-            }, */
-
-
-            //********************************************************************** 
+    //********************************************************************** 
 
 
             primeFactorization(number){
@@ -382,6 +317,38 @@ module.exports = {
 
 
 
+     //****************************************************************************        
+
+            //using Iteration method
+         //   permutations(otherChar);
+        permutations(string)
+        {
+        var results = [];
+
+        if (string.length === 1)
+        {
+        results.push(string);
+        return results;
+        }
+
+        for (var i = 0; i < string.length; i++)
+        {
+        var firstChar = string[i];
+        var otherChar = string.substring(0, i) + string.substring(i + 1);
+        var otherPermutations = permutations(otherChar);
+        for (var j = 0; j < otherPermutations.length; j++)
+        {
+        results.push(firstChar + otherPermutations[j]);
+        }
+        }
+        return results;
+        },
+       // var permutation1 = permutations(string);
+       // console.log("Total permutation: "+permutation1.length);
+      //  console.log(permutation1);
+
+
+        //************************************************************************* */
 
         
     };
