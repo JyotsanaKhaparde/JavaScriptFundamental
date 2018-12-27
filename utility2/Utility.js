@@ -114,7 +114,8 @@ module.exports = {
 //*****************************************************************************************
 
 
-    /* Aim:Take a range of 0 ­ 1000 Numbers and find the Prime numbers in that range.
+    /* Aim:Take a range of 0 to­ 1000 Numbers and find the Prime numbers in that range.
+    print which prime number is palindrom.
 
     the start and end clicks
 
@@ -155,28 +156,54 @@ module.exports = {
          
          // if value of count will be 2 then only that number is prime
 
-		 if (counter ==2)
+		 if (counter == 2)
 		 {
             //Appended the Prime number to the String
             
             primeNumbers = primeNumbers + i + " ";
-            
+            this.isPalindrome(i);
 
 		 }	
         }	 
 
-          console.log('')
-
-          //print all prime number from 1 to 1000
-
-	      console.log("Prime numbers from 1 to 1000 are :");
-	       
-          console.log(primeNumbers);
-          //var prime=primeNumbers.split('');
-         // console.log(prime);
-          
-          
+          console.log('');
+             
         },
+
+
+        isPalindrome(number)
+        {
+
+        var Check = parseInt(number);
+        var temp= 0;
+        var reverseNumber = 0;
+
+        while (Check > 0) 
+        {
+            //store remender of that number into temp
+
+            temp = Check % 10;
+
+            //take round off digit of that number into check
+
+            Check = Math.floor(Check / 10);
+
+            //reverse the number
+
+            reverseNumber = reverseNumber * 10 + temp;
+        }
+
+            //check if number is equal to reverse number
+
+            if(number === reverseNumber)
+            {
+                console.log(number,'is a Palindrome number');
+            }
+            else
+            {
+                console.log(number);
+            }
+    },
 
 //**********************************************************************************
 
@@ -731,6 +758,46 @@ module.exports = {
 		}
     }
  },
+
+ //*****************************************************************************************
+
+ bubbleSort(f)
+ {
+     //loop for perform bubble sort
+     var temp;
+     var s = f;
+     var n = f.length;
+
+     var array =[];
+
+    //split that words from the file where "," is used
+
+     array = s.split(",", n); 
+
+     //loop for doing bubble sort
+		
+        for(var i =  0 ; i < n-1 ; i++)
+        {
+            for(var j = i+1 ; j < n ; j++)
+            {
+                //if first element of loop is greater then second element then swap
+
+                if(array[i]>array[j])
+                {
+					temp = array[j];
+					array[j]=array[i];
+					array[i]= temp;
+				}
+			}
+		}
+		
+		//sorted list of number
+		
+        for(var i = 0 ; i < array.length ; i++)
+        {
+            console.log(array[i]);
+        }
+    },
 
 
  //***************************************************************************************

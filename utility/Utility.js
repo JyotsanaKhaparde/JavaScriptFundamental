@@ -605,9 +605,10 @@ module.exports = {
     * @since 24/12/2018
 
     */
-
    permutation(String, l, r)
     {
+        swap(str,l,i);
+
     if(l==r) 
     {
         console.log(String);
@@ -620,15 +621,16 @@ module.exports = {
         permutation(str , l+1, r);
         str = swap(str, l, i);
 
-    }
+        }
     }
     //return str;
     
 },
 
-    swap(String a, int i, int j) {
-    char temp;
-    char[] charArray = a.toCharArray();
+    swap( a, i, j) {
+    var temp;
+    var charArray = [];
+    charArray = a.CharArray();
     temp = charArray[i];
     charArray[i] = charArray[j];
     charArray[j] = temp;
@@ -712,7 +714,8 @@ module.exports = {
             }
                 console.log();
             }
-        }
+    }
+
     };
 
          
