@@ -1,11 +1,17 @@
 var utility =  require('../utility/Utility')
 var rl = utility.userInput();
 
-rl.question('Enter string : ',(string)=>
+/*rl.question('Enter string : ',(string)=>
 {
-    var permutation1 = utility.permutations(string);
-    console.log("Total permutation: "+permutation1.length);
-     console.log(permutation1);
+    utility.permutations(string);
+    
         process.exit();
 
+});*/
+
+rl.question('Enter string: ',(string)=>
+{
+   var l = string.length;
+    utility.permutation(string,0,l-1);
 });
+
