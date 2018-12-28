@@ -1,4 +1,13 @@
-var utility =  require('../utility2/Utility')
+/***********************************************************************************
+ *  Purpose         : given the temperature in fahrenheit as input outputs the temperature 
+                      in Celsius or viceversa using the formula.
+ *  @file           : temperatureConversion.js
+ *  @author         : Jyotsana Khaparde
+ *  @version        : v10.11.0
+ *  @since          : 12-09-2018
+ **********************************************************************************/
+
+var utility =  require('../utility/Utility')
 
 var rl = utility.userInput();
 

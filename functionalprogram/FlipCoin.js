@@ -1,3 +1,11 @@
+/***********************************************************************************
+ *  Purpose         : flip coin and print percentage of head and tail
+ *  @file           : FlipCoin.js
+ *  @author         : Jyotsana Khaparde
+ *  @version        : v10.11.0
+ *  @since          : 12-09-2018
+ **********************************************************************************/
+
 const readline = require('readline');
 
 const rl = readline.createInterface({

@@ -1,3 +1,11 @@
+/***********************************************************************************
+ *  Purpose         : Print all Permutations of input string using iterative method.
+ *  @file           : StringIterativePermutation.js
+ *  @author         : Jyotsana Khaparde
+ *  @version        : v10.11.0
+ *  @since          : 12-09-2018
+ **********************************************************************************/
+
 const readline = require('readline');
 const utility = require('../utility/Utility');
 const rl = readline.createInterface({

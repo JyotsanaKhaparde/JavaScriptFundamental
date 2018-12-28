@@ -1,3 +1,13 @@
+/***********************************************************************************
+ *  Purpose         :  A program with cubic running time. Read in N integers and counts the
+                       number of triples that sum to exactly 0.
+
+ *  @file           : triples.js
+ *  @author         : Jyotsana Khaparde
+ *  @version        : v10.11.0
+ *  @since          : 12-09-2018
+ **********************************************************************************/
+
 const readline = require('readline');
 const rl = readline.createInterface({
     input: process.stdin,

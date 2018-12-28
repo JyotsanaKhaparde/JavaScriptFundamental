@@ -1,3 +1,11 @@
+/***********************************************************************************
+ *  Purpose         : Print all Permutations of input string using iterative method.
+ *  @file           : StringIterativePermutation.js
+ *  @author         : Jyotsana Khaparde
+ *  @version        : v10.11.0
+ *  @since          : 12-09-2018
+ **********************************************************************************/
+
 var prompt = require('prompt');
 var val=/[0-9]/g;
 var count = 0, board =

@@ -1,3 +1,11 @@
+/***********************************************************************************
+ *  Purpose         : program to find the roots of the equation a*x*x + b*x + c.
+ *  @file           : Quadratic.js
+ *  @author         : Jyotsana Khaparde
+ *  @version        : v10.11.0
+ *  @since          : 12-09-2018
+ **********************************************************************************/
+
 const readline = require('readline');
 const rl = readline.createInterface({
     input  : process.stdin,

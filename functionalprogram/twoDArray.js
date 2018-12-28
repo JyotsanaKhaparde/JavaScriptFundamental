@@ -1,3 +1,12 @@
+/***********************************************************************************
+ *  Purpose         : Print 2D arrays of integers, doubles, or booleans from standard input and 
+                      printing them out to standard output.
+ *  @file           : twoDArray.js
+ *  @author         : Jyotsana Khaparde
+ *  @version        : v10.11.0
+ *  @since          : 12-09-2018
+ **********************************************************************************/
+
 const readline = require('readline');
 const rl = readline.createInterface({
     input: process.stdin,

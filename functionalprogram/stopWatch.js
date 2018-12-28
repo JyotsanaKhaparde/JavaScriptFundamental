@@ -1,3 +1,12 @@
+/***********************************************************************************
+ *  Purpose         : Write a Stopwatch Program for measuring the time that elapses between
+                      the start and end clicks.
+ *  @file           : stopWatch.js
+ *  @author         : Jyotsana Khaparde
+ *  @version        : v10.11.0
+ *  @since          : 12-09-2018
+ **********************************************************************************/
+
 const readline = require('readline');
 
 const userInput = readline.createInterface(
