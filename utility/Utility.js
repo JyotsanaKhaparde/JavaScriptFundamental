@@ -370,7 +370,7 @@ module.exports = {
 //*******************************************************************************
 
 
-  /* Aim: Simulates a gambler who start with $stake and place fair bets until
+  /** Aim: Simulates a gambler who start with $stake and place fair bets until
     he/she goes broke (i.e. has no money) or reach $goal. Keeps track of the number of
     times he/she wins and the number of bets he/she makes. Run the experiment N
     times, averages the results, and prints them out.
@@ -378,6 +378,11 @@ module.exports = {
     * @author Jyotsana Khaparde
 
     * @file : Gambler.js
+
+    * @param stack integer
+    * @param goal integer
+    * @param trials integer
+
 
     * @version v10.11.0
 
@@ -434,13 +439,15 @@ module.exports = {
     
 //***********************************************************************************
 
-    /* Aim: Given N distinct Coupon Numbers, how many random numbers do you
+    /** Aim: Given N distinct Coupon Numbers, how many random numbers do you
     need to generate distinct coupon number? This program simulates this random
     process.
 
     * @author Jyotsana Khaparde
 
     * @file : Coupon.js
+
+    * @param n integer
 
     * @version v10.11.0
 
@@ -502,12 +509,17 @@ module.exports = {
 //***********************************************************************************
 
 
-    /* Aim: A program with cubic running time. Read in N integers and counts the
+    /**  Aim: A program with cubic running time. Read in N integers and counts the
     number of triples that sum to exactly 0.
 
     * @author Jyotsana Khaparde
 
     * @file : triples.js
+
+    * @param array array taken by user
+    * @param N integer
+
+
 
     * @version v10.11.0
 
@@ -543,11 +555,13 @@ module.exports = {
 
 //*************************************************************************************
 
-    /* Aim:take number as a input from user and prints the Nth harmonic number.
+    /**  Aim:take number as a input from user and prints the Nth harmonic number.
 
     * @author Jyotsana Khaparde
 
     * @file : harmonicNumber.js
+
+    * @param number integer taken by user
 
     * @version v10.11.0
 
@@ -571,11 +585,13 @@ module.exports = {
 //*************************************************************************************
 
 
-    /* Aim:Computes the prime factorization of N using brute force.
+    /**  Aim:Computes the prime factorization of N using brute force.
 
     * @author Jyotsana Khaparde
 
     * @file : primeFactor.js
+
+    * @param number integer
 
     * @version v10.11.0
 
@@ -608,13 +624,17 @@ module.exports = {
 
 
             
-    /* Aim:Write a Stopwatch Program for measuring the time that elapses between
+    /**  Aim:Write a Stopwatch Program for measuring the time that elapses between
 
      the start and end clicks.
 
     * @author Jyotsana Khaparde
 
     * @file : stopWatch.js
+
+    * @param start integer
+    * @param stop integer
+
 
     * @version v10.11.0
 
@@ -647,11 +667,15 @@ module.exports = {
 //**********************************************************************************
 
      
-    /* Aim:Take string as a input from user and find all permutation of a String
+    /**  Aim:Take string as a input from user and find all permutation of a String
     
     * @author Jyotsana Khaparde
 
     * @file : PermutationString.js
+
+    * @param char_arr character array taken by user
+    * @param i integer
+
 
     * @version v10.11.0
 
@@ -709,14 +733,19 @@ module.exports = {
 
 //****************************************************************************
 
-    /* Aim:Print 2D arrays of integers, doubles, or booleans from standard input and 
+    /**  Aim:Print 2D arrays of integers, doubles, or booleans from standard input and 
     printing them out to standard output.
     
     * @author Jyotsana Khaparde
 
     * @file : twoDArray.js
 
-    * @version v10.11.0
+    * @param arr array taken by user
+    * @param start integer
+    * @param size integer
+
+
+     * @version v10.11.0
 
     * @since 24/12/2018
 
@@ -765,14 +794,18 @@ module.exports = {
  //***************************************************************************************
     
     
-        /* Aim:Take 2 string from user and find that string is anagr4am or not.
+        /**  Aim:Take 2 string from user and find that string is anagr4am or not.
     
          the start and end clicks.
     
         * @author Jyotsana Khaparde
 
         * @file : anagram.js
-    
+
+        * @param string1 integer
+        * @param string2 integer
+
+
         * @version v10.11.0
     
         * @since 24/12/2018
@@ -858,7 +891,7 @@ module.exports = {
     //*****************************************************************************************
     
     
-        /* Aim:Take a range of 0 to­ 1000 Numbers and find the Prime numbers in that range.
+        /** Aim:Take a range of 0 to­ 1000 Numbers and find the Prime numbers in that range.
         print which prime number is palindrom.
     
         the start and end clicks
@@ -920,6 +953,11 @@ module.exports = {
               console.log('');
                  
             },
+
+            /**
+             * 
+             * @param number  integre taken by user
+             */
     
     
             isPalindrome(number)
@@ -1000,13 +1038,17 @@ module.exports = {
     
     //**********************************************************************************
     
-        /* Aim:function that takes a date as input and prints the day of the week that
+        /**  Aim:function that takes a date as input and prints the day of the week that
         date falls on.
     
         * @author Jyotsana Khaparde
 
         * @file : dayOfWeek.js
-    
+
+        * @param m taken month by user
+        * @param d taken day by user
+        * @param y taken year by user
+
         * @version v10.11.0
     
         * @since 24/12/2018
@@ -1074,13 +1116,15 @@ module.exports = {
     
     //*********************************************************************************
          
-         /* Aim:given the temperature in fahrenheit as input outputs the temperature 
+         /**  Aim:given the temperature in fahrenheit as input outputs the temperature 
          in Celsius or viceversa using the formula.
     
         * @author Jyotsana Khaparde
 
         * @file : temperatureConversion.js
-    
+
+        * @param temperature integer taken by user
+
         * @version v10.11.0
     
         * @since 24/12/2018
@@ -1110,13 +1154,18 @@ module.exports = {
     //************************************************************************************
     
     
-         /* Aim:Function to calculate monthlyPayment that reads in three command­line 
+         /**  Aim:Function to calculate monthlyPayment that reads in three command­line 
          arguments P, Y, and R and calculates the monthly payments
          
         * @author Jyotsana Khaparde
 
         * @file : monthlyPayment.js
-    
+
+        * @param y integer
+        * @param p integer
+        * @param r integer
+
+
         * @version v10.11.0
     
         * @since 24/12/2018
@@ -1139,13 +1188,13 @@ module.exports = {
     
     //****************************************************************************************
     
-        /* Aim:Write a function sqrt to compute the square root of a nonnegative number c
+        /**  Aim:Write a function sqrt to compute the square root of a nonnegative number c
         given in the input using Newton's method.
          
         * @author Jyotsana Khaparde
 
-        * @file : sqrt.js
-    
+        * @param c integer
+
         * @version v10.11.0
     
         * @since 24/12/2018
@@ -1189,13 +1238,15 @@ module.exports = {
     
     //****************************************************************************************
     
-        /* Aim:Program that outputs the binary (base 2) representation of
+        /**  Aim:Program that outputs the binary (base 2) representation of
         the decimal number typed as the input.
          
         * @author Jyotsana Khaparde
 
         * @file : toBinary.js
-    
+
+        * @param number take decimal number from user
+
         * @version v10.11.0
     
         * @since 24/12/2018
@@ -1241,13 +1292,15 @@ module.exports = {
     
     //*************************************************************************************
     
-        /* Aim: Program to read an integer as an input, convert to Binary using toBinary
+        /**  Aim: Program to read an integer as an input, convert to Binary using toBinary
         function and perform the following functions - Swap nibbles and find the new number.
          
         * @author Jyotsana Khaparde
 
         * @file : binary.js
-    
+
+        * @param number integer
+
         * @version v10.11.0
     
         * @since 24/12/2018
@@ -1331,13 +1384,15 @@ module.exports = {
     
     //***************************************************************************************
     
-        /* Aim: Read in a list of words from File. Then prompt the user to enter a word to
+        /**  Aim: Read in a list of words from File. Then prompt the user to enter a word to
         search the list.The program reports if the search word is found in the list.
          
         * @author Jyotsana Khaparde
 
         * @file : binarySearchOfString.js
-    
+
+        * @param word integer
+
         * @version v10.11.0
     
         * @since 24/12/2018
@@ -1416,13 +1471,15 @@ module.exports = {
     //**************************************************************************************
     
     
-       /* Aim: Read in a list of numbre from File. Then prompt the user to enter a word to
+       /**  Aim: Read in a list of numbre from File. Then prompt the user to enter a word to
         search the list.The program reports if the search number is found in the list.
          
         * @author Jyotsana Khaparde
 
         * @file : binarySearchOfInt.js
-    
+
+        * @param number integer
+
         * @version v10.11.0
     
         * @since 24/12/2018
@@ -1502,12 +1559,14 @@ module.exports = {
     
     //***************************************************************************************
     
-        /* Aim: Reads an integers from file prints them in sorted order using Bubble Sort.
+        /**  Aim: Reads an integers from file prints them in sorted order using Bubble Sort.
     
         * @author Jyotsana Khaparde
 
         * @file : bubbleSortOfInteger.js
-    
+
+        * @param size integer
+
         * @version v10.11.0
     
         * @since 24/12/2018
@@ -1572,12 +1631,14 @@ module.exports = {
     
      //*****************************************************************************************
     
-        /* Aim: Reads an integers from file prints them in sorted order using Bubble Sort.
+        /**  Aim: Reads an integers from file prints them in sorted order using Bubble Sort.
     
         * @author Jyotsana Khaparde
 
         * @file : bubbleSort.js
-    
+
+        * @param f integer
+
         * @version v10.11.0
     
         * @since 24/12/2018
@@ -1625,12 +1686,14 @@ module.exports = {
     
      //***************************************************************************************
     
-        /* Aim: Reads an string from file prints them in sorted order using Bubble Sort.
+        /** Aim: Reads an string from file prints them in sorted order using Bubble Sort.
     
         * @author Jyotsana Khaparde
 
         * @file : bubbleSortOfString.js
-    
+
+        * @param f integer
+   
         * @version v10.11.0
     
         * @since 24/12/2018
@@ -1679,13 +1742,15 @@ module.exports = {
     
     //*************************************************************************************
     
-        /* Aim: Reads a strings from standard input and prints them in sorted order.
+        /**  Aim: Reads a strings from standard input and prints them in sorted order.
         Uses insertion sort.
     
         * @author Jyotsana Khaparde
 
         * @file : insertionSort.js
-    
+
+        * @param f integer
+
         * @version v10.11.0
     
         * @since 24/12/2018
@@ -1732,13 +1797,15 @@ module.exports = {
     
     //******************************************************************************************
     
-        /* Ain: There is 1, 2, 5, 10, 50, 100, 500 and 1000 Rs Notes which can be
+        /**  Ain: There is 1, 2, 5, 10, 50, 100, 500 and 1000 Rs Notes which can be
         returned by Vending Machine. Write a Program to calculate the minimum number
         of Notes as well as the Notes to be returned by the Vending Machine as a change.
     
         * @author Jyotsana Khaparde
 
         * @file : vendingMatchine.js
+
+        * @param amount integer
     
         * @version v10.11.0
     
@@ -1781,7 +1848,7 @@ module.exports = {
     
     //*******************************************************************************************
     
-        /* Aim:­ takes a command­line argument N, asks you to think of a number
+        /**  Aim:­ takes a command­line argument N, asks you to think of a number
         between 0 and N­1, where N = 2^n, and always guesses the answer with n
         questions.
 
@@ -1789,7 +1856,9 @@ module.exports = {
         * @author Jyotsana Khaparde
         
         * @file : guessNumber.js
-    
+
+        * @param number integer
+
         * @version v10.11.0
     
         * @since 24/12/2018
@@ -1845,13 +1914,15 @@ module.exports = {
     
     //***********************************************************************************************
 
-        /* Aim:­ To Merge Sort an array, we divide it into two halves, sort the two halves
+        /**  Aim:­ To Merge Sort an array, we divide it into two halves, sort the two halves
         independently, and then merge the results to sort the full array.
 
     
         * @author Jyotsana Khaparde
 
         * @file : mergeSort.js
+
+        * @param arr integer
 
         * @version v10.11.0
     
