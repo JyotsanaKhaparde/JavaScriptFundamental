@@ -1679,7 +1679,7 @@ module.exports = {
             
             for(var i = 0 ; i < array.length ; i++)
             {
-                console.log(array[i]);
+                console.log('sorted list: ',array[i]);
             }
         },
     
@@ -1974,7 +1974,238 @@ module.exports = {
         }
       
         return result.concat(left.slice(indexLeft)).concat(right.slice(indexRight))
-      }
+      },
+
+
+//*************************************************************************
+
+unorderdeList(word)
+{
+    const linked = require('../dataStructureProgram/LinkedList.js');
+
+    //Read in a list of words from File
+
+		  		 
+    var str="";
+    
+    //Read list of words from File
+
+    var fileStream = require('fs');
+    var f = fileStream.readFileSync('unorderedList','utf8')
+
+    console.log('strings are: ',(f));
+
+    var s = f;
+    var length = f.length;
+    var check = "";
+
+    var arrOfStr = [];
+
+    //split that words from the file where "," is used
+
+    arrOfStr = s.split(",", length); 
+                  
+    var list = new linked.LinkedList; 
+    for(var i = 0 ; i < arrOfStr.length ; i++) {
+        list.add(arrOfStr[i]);
+    }
+        //list.printList();
+        if(list.search(word)){
+            var s1 = word ;
+            console.log("this word is alredy in list so remove it");
+            var Deletedata = list.indexOf(s1);
+            list.removeFrom(Deletedata);
+            list.printList();
+                  
+            }
+            else 
+            {
+                console.log("this word is not in the list so add it");
+                list.add(word);
+               list.printList();
+                          
+            }
+            var writeMe = list.printList();
+           fileStream.writeFileSync('writeUnorderedList',writeMe);
+
+    },
+
+
+    //*********************************************************************
+
+    orderedList(number)
+    {
+        const linked = require('../dataStructureProgram/LinkedList.js');
+
+        //Read in a list of words from File
+    
+                       
+        var str="";
+        
+        //Read list of words from File
+    
+        var fileStream = require('fs');
+        var f = fileStream.readFileSync('orderedList','utf8')
+    
+        console.log('numbers are: ',(f));
+    
+        var s = f;
+        var length = f.length;
+        var check = "";
+    
+        var arrOfStr = [];
+    
+        //split that words from the file where "," is used
+    
+        arrOfStr = s.split(",", length); 
+
+        //var new_node1;          
+        var list = new linked.LinkedList; 
+        for(var i = 0 ; i < arrOfStr.length ; i++) {
+           list.add(arrOfStr[i]);
+        }
+        list.printList();
+
+            if(list.search(number)){
+                var s1 = number ;
+                console.log("this word is alredy in list so remove it");
+                var Deletedata = list.indexOf(s1);
+                list.removeFrom(Deletedata);
+                list.printList();
+                      
+                }
+                else 
+                {
+                    console.log("this word is not in the list so add it");
+                   list.add(number);
+                   list.sortList();
+                   list.printList();
+                              
+                }
+    
+    
+
+    },
+
+
+//**************************************************************************
+
+balancedParantheses(value){
+    const stack = require('../dataStructureProgram/Stack.js');
+    var obj = new stack.Stack; 
+
+        var arr = [];
+        arr = value.split("");
+	
+		
+		for(var i = 0 ; i < arr.length ; i++) {
+			
+			if(arr[i] == '(') {
+				obj.push('(');
+			}
+			if(arr[i] == ')'){
+				obj.pop();
+
+			}
+			
+		}
+		if(obj.isEmpty() ){
+            console.log('Parentheses are balanced');
+            
+		}else {
+            console.log('Parentheses are not balanced');
+            
+		}
+
+},
+
+//*************************************************************************
+
+bankingCashCounter(cash,people){
+
+
+    const readline = require('readline');
+
+    const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+    
+    });
+
+    const queue = require('../dataStructureProgram/Queue.js');
+    var obj = new queue.Queue; 
+
+
+		
+		
+		for(var i = 0 ; i <= people ; i++) {
+			obj.enqueue(i);
+		}
+		for(var i = 0 ; i < people ; i++ ) {
+		var choice = rl.question("Enter 1 for deposit money or 0 for withdrow money: ",(choice));
+		
+		switch (choice) {
+        case 1:
+        
+			var deposit = rl.question("Enter deposit amount: ",(deposit));
+             cash = cash+deposit;
+            console.log("Total amount after deposit: "+cash);
+            //obj.deQueue();
+			break;
+			
+		case 0:
+        var deposit = rl.question("Enter deposit amount: ",(withdrow));
+			 cash = cash - withdrow;
+            console.log("Total amount after deposit: "+cash);
+			//obj.deQueue();
+			break;
+
+		default:
+			break;
+		}
+		}
+
+},
+
+//********************************************************************* 
+
+palindromChecker(value){
+
+    const deque = require('../dataStructureProgram/Deque.js');
+
+    var obj = new deque.Deque();
+    var string = value.toString();
+		
+		
+		for(var i = 0 ; i < string.length ; i++) {
+			var data = string.charAt(i);
+			obj.addToFront(data);
+        }
+       // console.log();
+        
+		var count=true;
+		
+		while(obj.size() > 0) {
+           var x = obj.removeFront();
+           var y = obj.removeRear();
+           console.log(x);
+           console.log(y);
+
+           
+			if(obj.removeFront() !== obj.removeRear()) {
+				count = false;
+				break;
+			}
+		}
+		if(count==true) {
+            console.log("String is palindrome");
+            
+		}else {
+            console.log("String is not palindrom");
+            
+		}
+
+}
     
     };
     
