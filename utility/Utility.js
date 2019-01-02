@@ -2169,45 +2169,197 @@ bankingCashCounter(cash,people){
 
 //********************************************************************* 
 
-palindromChecker(value){
+palindromChecker(inputStr){
+    const obj = require('../dataStructureProgram/Deque.js');
+    var deque = new obj.Deque;
 
-    const deque = require('../dataStructureProgram/Deque.js');
+    for(let r=0;r<inputStr.length;r++)
+    {
+        deque.enqueue(inputStr.charAt(r));
+    } 
+   
+    var flag = true;
+    var x ,y ,str1="",str2="";
+     for(let i=0;i<deque.Size();i++)  
+     {
+         x = deque.removeFirstNode();
+         str1+=x;     
+     }
+   
+     for(let r=0;r<inputStr.length;r++)
+    {
+        deque.enqueue(inputStr.charAt(r));
+    } 
+      for(let i=0;i<deque.Size();i++)
+     { 
+         y = deque.removeLastNode();
+         if(y==0)
+         {
+             break;
+         }
+         else
+         {
+           str2+=y;
+         }  
+         
+     }
+   
+     if(str1 === str2)
+     {
+         console.log(' string is Palindrome..');
+     }
+     else
+     {
+         console.log(' string is not Palindrome..');
+     }
+   
+    }  , 
 
-    var obj = new deque.Deque();
-    var string = value.toString();
-		
-		
-		for(var i = 0 ; i < string.length ; i++) {
-			var data = string.charAt(i);
-			obj.addToFront(data);
-        }
-       // console.log();
+ //*******************************************************************    
+
+ twoDPrime(){
+    var array1 = [];
+    //var primeNumbers = " ";
+
+    //loop for find prime number from 1 to 1000 
+
+    for (var i = 1; i < 1000; i++)  	   
+    { 		 		  
+         var counter=0; 
+
+         //loop for check each number from num to 1
+
+         for(var num =i; num>=1; num--)
+         {
+            //all prime number devide only by 1 and itself that means 2 times
+
+            if(i%num==0)
+         {
+
+        //in 1st iteration value of count will be 0+1=1 and in 2nd iteration 1+1=2
+
+          counter = counter + 1;
+         }
         
-		var count=true;
-		
-		while(obj.size() > 0) {
-           var x = obj.removeFront();
-           var y = obj.removeRear();
-           console.log(x);
-           console.log(y);
+     }
+     
+     // if value of count will be 2 then only that number is prime
 
-           
-			if(obj.removeFront() !== obj.removeRear()) {
-				count = false;
-				break;
-			}
-		}
-		if(count==true) {
-            console.log("String is palindrome");
-            
-		}else {
-            console.log("String is not palindrom");
-            
-		}
+     if (counter == 2)
+     {
+        //Appended the Prime number to the String
+        array1 = parseInt(i);
+        //console.log("array: ",(array1));
 
-}
+        return this.twoDPrime1(array1);
+        
+
+       // primeNumbers = primeNumbers + i + " ";
+      
+
+     }
+	
+    }	 
+
+     // console.log('');
+         
+    },
+
+    twoDPrime1(array1){
+        var row=col=100;
+            var arr = new Array();
+                for(i=0;i<row;i++) 
+                {   
+                    arr[i]=new Array();         
+                    for(j=0;j<col;j++)
+                    {  
+                       // value += 1;
+                        arr[i][j] = array1[j];
+                       
+                    }
+                
+                }
+                console.log(arr);
+                
+               // this.twoDPrime3(arr,0,arr.length);
+
+
+    },
+
+    // twoDPrime3(arr,start,size)
+    // {
+    //         var util = require('util');
+    //         var i=start,j=size;
+
+    //         // To print Integer 2D array
+
+    //          for(i=0;i<arr.length;i++) 
+    //          {
+    //                 for(j=0;j<arr.length;j++) 
+    //                 {
+    //                     util.print(arr[i][j]+'  ');
+    //                 }
+    //                 console.log();
+    //          }
+    // },
+
+
+  //******************************************************************* 
+  
     
-    };
+binomialCoeff( n, k) 
+{ 
+    var n = parseInt(n);
+    var k = parseInt(k);
+var res = 1; 
+
+// Since C(n, k) = C(n, n-k) 
+if (k > n - k) 
+k = n - k; 
+
+// Calculate value of  
+// [n*(n-1)*---*(n-k+1)] /  
+// [k*(k-1)*---*1] 
+for (var i = 0; i < k; ++i) 
+{ 
+res *= (n - i); 
+res /= (i + 1); 
+} 
+
+return res; 
+}, 
+
+
+// A Binomial coefficient  
+// based function to find  
+// nth catalan number in  
+// O(n) time 
+catalan( n) 
+{ 
+var n = parseInt(n);
+// Calculate value of 2nCn 
+var c = this.binomialCoeff(2 * n, n); 
+
+// return 2nCn/(n+1) 
+return c / (n + 1); 
+}, 
+
+// A function to count number of 
+// BST with n nodes using catalan 
+countBST( n) 
+{ 
+// find nth catalan number 
+var n = parseInt(n);
+var count = this.catalan(n); 
+
+// return nth catalan number 
+return count; 
+},
+
+//************************************************************************* 
+
+ };
+    
     
     
                 

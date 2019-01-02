@@ -26,7 +26,7 @@ console.log("1. To print 2D Integer array \n"
 
         if(choice == 1)
         {
-            var row=col=2,value=1;
+            var row=col=7,value=1;
             var arr = new Array();
                 for(i=0;i<row;i++) 
                 {   
