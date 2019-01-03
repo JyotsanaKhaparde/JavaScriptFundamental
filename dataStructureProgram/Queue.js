@@ -1,3 +1,5 @@
+var show = require('util');
+
 // JavaScript source code
 // Queue implemented using LinkedList
 class Node{
@@ -42,7 +44,54 @@ print() {
 isEmpty(){
     return this.head == null;
 }
+
+
+
+display2(){
+    var t = this.head;
+    
+    while(t!=null)
+    {
+        show.print(t.data);
+        if(t.next!=null)
+            show.print("  ");
+        t = t.next;
+    }
+    console.log();
+    console.log();
 }
+
+displayCalender(d){
+   
+    var t = this.head;
+   // var t2 = this.head;
+  
+     var count = 0;
+
+    while(t.data == " ")
+    {
+   show.print("   ");
+   
+   t = t.next;
+    }
+    while(t!=null)
+    {   
+        count++;
+        show.print(" ", t.data);
+     if(t.data < 10){
+         show.print(" ");
+     }
+     
+
+     if (((count + d) % 7 == 0) ) {
+        console.log("");
+    }
+   t = t.next;
+}
+count = 0;
+}
+}
+
 
 module.exports = {
     Queue

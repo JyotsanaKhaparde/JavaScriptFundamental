@@ -2218,90 +2218,82 @@ palindromChecker(inputStr){
  //*******************************************************************    
 
  twoDPrime(){
-    var array1 = [];
-    //var primeNumbers = " ";
-
-    //loop for find prime number from 1 to 1000 
-
-    for (var i = 1; i < 1000; i++)  	   
-    { 		 		  
-         var counter=0; 
-
-         //loop for check each number from num to 1
-
-         for(var num =i; num>=1; num--)
-         {
-            //all prime number devide only by 1 and itself that means 2 times
-
-            if(i%num==0)
-         {
-
-        //in 1st iteration value of count will be 0+1=1 and in 2nd iteration 1+1=2
-
-          counter = counter + 1;
-         }
-        
-     }
-     
-     // if value of count will be 2 then only that number is prime
-
-     if (counter == 2)
-     {
-        //Appended the Prime number to the String
-        array1 = parseInt(i);
-        //console.log("array: ",(array1));
-
-        return this.twoDPrime1(array1);
-        
-
-       // primeNumbers = primeNumbers + i + " ";
-      
-
-     }
-	
-    }	 
-
-     // console.log('');
-         
-    },
-
-    twoDPrime1(array1){
-        var row=col=100;
-            var arr = new Array();
-                for(i=0;i<row;i++) 
-                {   
-                    arr[i]=new Array();         
-                    for(j=0;j<col;j++)
-                    {  
-                       // value += 1;
-                        arr[i][j] = array1[j];
-                       
+    var i,j,n=1000,k=0;
+            var flag = 0;
+            var intArray = new Array(n);
+            
+            for(i=0;i<=n;i++)
+            {
+                for(var z=2;z<i;z++)
+                {
+                    if(i%z==0)
+                    {
+                        flag = 0;
+                        break;
                     }
-                
+                    else                    
+                        flag = 1;                       
                 }
-                console.log(arr);
-                
-               // this.twoDPrime3(arr,0,arr.length);
+                if(flag == 1)
+                {
+                    console.log(i+" ");
+                    
+                   // System.out.print(i+" ");
+                    intArray[k] = i;
+                    k++;
+                }
+            }
+            
+            var a=new Array(10,30);
+            var b=new Array(10,30);
+    
+            var count=0;
+              for(i=0;i<10;i++)
+                {
+                   for(j=0;j<25;j++)
+                    {
+                        if(count==intArray.length) 
+                            break;
 
+                    a[i][j]=intArray[count];
+                    count++;
+                    }
+                }
+                console.log("Count is "+count);
+                
+            //System.out.println("Count is "+count);  
+                    
+            
+            var pause = 100;//taking for partition purpose
+              
+            console.log("2d Array :");
+            
+            //System.out.println("2d Array :"); 
+            
+            for(i=0;i<10;i++)
+            {
+               for(j=0;j<25;j++)
+                {   
+                  
+                   if(a[i][j]>pause)
+                     {
+                         pause=pause+100;
+                         console.log();
+                         
+                        // System.out.println();
+                     } 
+                     console.log(a[i][j]+" ");
+                      
+                  // System.out.print(a[i][j]+" ");
+                }
+            }
+                              
+  
+                    
 
     },
 
-    // twoDPrime3(arr,start,size)
-    // {
-    //         var util = require('util');
-    //         var i=start,j=size;
-
-    //         // To print Integer 2D array
-
-    //          for(i=0;i<arr.length;i++) 
-    //          {
-    //                 for(j=0;j<arr.length;j++) 
-    //                 {
-    //                     util.print(arr[i][j]+'  ');
-    //                 }
-    //                 console.log();
-    //          }
-    // },
+   
 
 
   //******************************************************************* 

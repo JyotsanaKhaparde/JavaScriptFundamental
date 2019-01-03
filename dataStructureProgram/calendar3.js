@@ -8,14 +8,14 @@
  **********************************************************************************/
 
 var Utility = require('../utility/Utility');
-//var show = require('util');
-var linkedQueue = require('../dataStructureProgram/Queue.js');
+var show = require('util');
+var linkedStack = require('../dataStructureProgram/Stack.js');
 
 
 function calender(){
 
-var linkedqueue = new linkedQueue.Queue;
-var linkedqueue2 = new linkedQueue.Queue;
+var linkedstack = new linkedStack.Stack;
+var linkedstack2 = new linkedStack.Stack;
 var months = [" ","January","February","March","April","May","Jun",
 				"July","August","September","October","November","December"];
 
@@ -49,20 +49,20 @@ try {
 
     console.log("     " + months[newMonth] + " " + year);
 
-    for (let i = 0; i < 7; i++) {
-        linkedqueue.enqueue(day[i]);
+    for (let i = 6; i >= 0; i--) {
+        linkedstack.push(day[i]);
     }
-    linkedqueue.display2();
+    linkedstack.display2();
 
-     for (let i = 0; i < d; i++) {
-         linkedqueue2.enqueue(" ");
+     for (let i = 0; i < (d*3+1); i++) {
+         show.print(" ")
      }
 
-    for (let i = 1; i <= days[newMonth]; i++) {
-        linkedqueue2.enqueue(i);
+    for (let i = days[newMonth]; i >= 1; i--) {
+        linkedstack2.push(i);
     }
 
-    linkedqueue2.displayCalender(d);
+    linkedstack2.displayCalender(d);
 }
  catch (err) 
  {

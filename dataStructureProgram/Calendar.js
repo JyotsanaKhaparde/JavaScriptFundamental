@@ -1,3 +1,12 @@
+/***********************************************************************************
+ *  Purpose         : Write a program Calendar.java that takes the month and year as command­line
+					  arguments and prints the Calendar of the month.
+ *  @file           : Calendar.js
+ *  @author         : Jyotsana Khaparde
+ *  @version        : v10.11.0
+ *  @since          : 12-09-2018
+ **********************************************************************************/
+
 var utility =  require('../utility/Utility')
 
 //var rl = utility.userInput();
