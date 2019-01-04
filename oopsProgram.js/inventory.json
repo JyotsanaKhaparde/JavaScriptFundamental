@@ -7,5 +7,4 @@
 "Wheats" : [{"name":"xyz","weight":"40","price":"1800"},
             {"name":"pqr","weight":"50","price":"1900"},
             {"name":"jsk","weight":"60","price":"2000"}] 
-            
 }
