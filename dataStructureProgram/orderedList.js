@@ -5,7 +5,7 @@
  *  @file           : orderedList.js
  *  @author         : Jyotsana Khaparde
  *  @version        : v10.11.0
- *  @since          : 12-09-2018
+ *  @since          : 31-12-2018
  **********************************************************************************/
 
 var utility =  require('../utility/Utility')
@@ -14,6 +14,13 @@ var rl = utility.userInput();
 
 
 rl.question('Enter any word for checking: ',(number)=>{
+
+    // if (isNaN(number))
+    //      throw "No input or string found , Please Enter a valid input";
+
+   
+
+
     utility.orderedList(number);
     process.exit();
 })

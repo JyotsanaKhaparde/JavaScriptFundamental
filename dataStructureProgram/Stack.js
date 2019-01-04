@@ -5,10 +5,8 @@ function Node(data) {
     this.data = data;
     this.next = null;
 }
-
 // Stack implemented using LinkedList
 class Stack{
-
 Stack() {
     this.top = null;
    // this.size = 0;
@@ -38,18 +36,16 @@ print() {
 peek() {
     return this.top.data;
 }
-
 isEmpty(){
     if(this.top === null)
         return true;
     else
-        return false;    
-    
+        return false;   
+   
 }
-
 display2(){
     var t = this.top;
-    
+   
     while(t!=null)
     {
         show.print(t.data);
@@ -60,29 +56,26 @@ display2(){
    // console.log();
     console.log();
 }
-
 displayCalender(d){
-   
+  
     var t = this.top;
    // var t2 = this.head;
-  
+ 
      var count = 0;
-
     while(t.data == " ")
     {
    show.print("  ");
-   
+  
    t = t.next;
     }
     while(t!=null)
-    {   
+    {  
         count++;
         show.print(" ", t.data);
      if(t.data < 10){
          show.print(" ");
      }
-     
-
+    
      if (((count + d) % 7 == 0) ) {
         console.log("");
     }
@@ -90,13 +83,25 @@ displayCalender(d){
 }
 count = 0;
 }
-}
+    displayReverse(top) {
 
+        if (top == null)
+            return;
+
+        this.displayReverse(top.next);
+        show.print(top.data);
+        if (top.next != top)
+            show.print("-->");
+
+    }
+    getHead() {
+        return this.top;
+    }
+}
 
 module.exports = {
     Stack
 }
-
 
 //    var stack = new Stack();
 //  stack.push(3);

@@ -6,7 +6,7 @@
  *  @file           : balancedParanthesse.js
  *  @author         : Jyotsana Khaparde
  *  @version        : v10.11.0
- *  @since          : 12-09-2018
+ *  @since          : 28-12-2018
  **********************************************************************************/
 
 var utility =  require('../utility/Utility')
@@ -15,6 +15,17 @@ var rl = utility.userInput();
 
 
 rl.question('Enter expression ',(value)=>{
-    utility.balancedParantheses(value);
-    process.exit();
+    
+        if(value===" ")
+        {
+            console.log('please enter valid input');
+    
+        }
+        else
+        {
+            utility.balancedParantheses(value);
+            process.exit();
+        } 
+    
+
 })

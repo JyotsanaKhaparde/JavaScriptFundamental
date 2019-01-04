@@ -1979,6 +1979,18 @@ module.exports = {
 
 //*************************************************************************
 
+/***********************************************************************************
+ *  Purpose         : Read the Text from a file, split it into words and arrange it as Linked List.
+                      Take a user input to search a Word in the List. If the Word is not found then add it
+                      to the list, and if it found then remove the word from the List. In the end save the
+                      list into a file
+ *  @author         : Jyotsana Khaparde
+ *  @file           : unorderedList.js
+ *  @param word     : taking string from user to check
+ *  @version        : v10.11.0
+ *  @since          : 31-12-2018
+ **********************************************************************************/
+
 unorderdeList(word)
 {
     const linked = require('../dataStructureProgram/LinkedList.js');
@@ -2006,11 +2018,13 @@ unorderdeList(word)
     arrOfStr = s.split(",", length); 
                   
     var list = new linked.LinkedList; 
-    for(var i = 0 ; i < arrOfStr.length ; i++) {
+    for(var i = 0 ; i < arrOfStr.length ; i++) 
+    {
         list.add(arrOfStr[i]);
     }
         //list.printList();
-        if(list.search(word)){
+        if(list.search(word))
+        {
             var s1 = word ;
             console.log("this word is alredy in list so remove it");
             var Deletedata = list.indexOf(s1);
@@ -2032,6 +2046,17 @@ unorderdeList(word)
 
 
     //*********************************************************************
+
+    /***********************************************************************************
+ *  Purpose         : ­ Read .a List of Numbers from a file and arrange it ascending Order in a
+                       List. Take user input for a number, if found then pop the number out of the
+                       list else insert the number in appropriate position
+ *  @author         : Jyotsana Khaparde
+ *  @file           : orderedList.js
+ *  @param number    : taking integer from user
+ *  @version        : v10.11.0
+ *  @since          : 31-12-2018
+ **********************************************************************************/
 
     orderedList(number)
     {
@@ -2066,7 +2091,8 @@ unorderdeList(word)
         }
         list.printList();
 
-            if(list.search(number)){
+            if(list.search(number))
+            {
                 var s1 = number ;
                 console.log("this word is alredy in list so remove it");
                 var Deletedata = list.indexOf(s1);
@@ -2090,38 +2116,113 @@ unorderdeList(word)
 
 //**************************************************************************
 
-balancedParantheses(value){
-    const stack = require('../dataStructureProgram/Stack.js');
-    var obj = new stack.Stack; 
+/***********************************************************************************
+ *  Purpose         : Take an Arithmetic Expression where parentheses are used to order the
+                      performance of operations. Ensure parentheses must appear in a balanced
+                      fashion.
+ *  @author         : Jyotsana Khaparde
+ *  @file           : balancedParanthesse.js
+ *  @param value    : taking expression from user
+ *  @version        : v10.11.0
+ *  @since          : 28-12-2018
+ **********************************************************************************/
 
-        var arr = [];
-        arr = value.split("");
+
+balancedParantheses(expression)
+{
+    const stackUsingLinked = require('../dataStructureProgram/Stack.js');
+        var list = new stackUsingLinked.Stack;
+        var char_array = [];
+        var str = "";
+        var x = 0, y = 0;
+
+        //loop for pushing each character of expression in array
+
+        for(let i = 0;i<expression.length;i++)
+        {
+            char_array.push(expression.charAt(i.toString()));
+        }
+        for(let z=0;z<char_array.length;z++)
+        {
+            //take element of that array in string
+            
+            str = char_array[z.toString()];
+            if( str === '{' || str === '[' || str === '(' )
+            {
+                list.push(str.toString());
+                x++;
+            }
+            else if(str === '}' || str === ']' || str === ')')
+            {
+                list.pop();
+                y++;
+            }
+        } 
+       
+        if(x == y)
+        {   
+            console.log('Parentheses are balanced');
+
+        }  
+        else
+        {
+            console.log('Parentheses are not balanced');
+
+        }
+    // const stack = require('../dataStructureProgram/Stack.js');
+    // var obj = new stack.Stack; 
+
+    //     //taking array to store expression
+    //     var arr = [];
+    //     arr = value.split("");
 	
 		
-		for(var i = 0 ; i < arr.length ; i++) {
-			
-			if(arr[i] == '(') {
-				obj.push('(');
-			}
-			if(arr[i] == ')'){
-				obj.pop();
+    //     for(var i = 0 ; i < arr.length ; i++)
+    //      {
+    //         //if '(' will be found then push it in arr 
+            
+    //         if(arr[i] === '(')
+    //         {
+	// 			obj.push('(');
+    //         }
 
-			}
+    //         //if ')' will be found then push it in arr 
+
+    //         if(arr[i] === ')')
+    //         {
+	// 			obj.pop();
+
+	// 		}
 			
-		}
-		if(obj.isEmpty() ){
-            console.log('Parentheses are balanced');
+	// 	}
+    //     if(obj.isEmpty() )
+    //     {
+    //         console.log('Parentheses are balanced');
             
-		}else {
-            console.log('Parentheses are not balanced');
+	// 	}else {
+    //         console.log('Parentheses are not balanced');
             
-		}
+	// 	}
 
 },
 
 //*************************************************************************
 
-bankingCashCounter(cash,people){
+/***********************************************************************************
+ *  Purpose         : Create a Program which creates Banking Cash Counter where people
+                      come in to deposit Cash and withdraw Cash. Have an input panel to add people
+                      to Queue to either deposit or withdraw money and dequeue the people. Maintain
+                      the Cash Balance.
+ *  @author         : Jyotsana Khaparde
+ *  @file           : bankingCashCounter.js
+ *  @param cash     : taking integer value as a cash from user
+ *  @param people   : number of people in integer
+ *  @version        : v10.11.0
+ *  @since          : 29-12-2018
+ **********************************************************************************/
+
+bankingCashCounter(cash,people)
+{
 
 
     const readline = require('readline');
@@ -2137,26 +2238,33 @@ bankingCashCounter(cash,people){
 
 
 		
-		
-		for(var i = 0 ; i <= people ; i++) {
+        //enqueue number of people in queue
+        
+        for(var i = 0 ; i <= people ; i++)
+        {
 			obj.enqueue(i);
-		}
-		for(var i = 0 ; i < people ; i++ ) {
+        }
+        
+        //loop for asking choice according to people
+
+        for(var i = 0 ; i < people ; i++ )
+        {
 		var choice = rl.question("Enter 1 for deposit money or 0 for withdrow money: ",(choice));
 		
-		switch (choice) {
+        switch (choice)
+        {
+        //case1 for deposit amount
         case 1:
-        
 			var deposit = rl.question("Enter deposit amount: ",(deposit));
-             cash = cash+deposit;
+            cash = cash+deposit;
             console.log("Total amount after deposit: "+cash);
             //obj.deQueue();
 			break;
-			
+		//case0 for withdrow amount	
 		case 0:
-        var deposit = rl.question("Enter deposit amount: ",(withdrow));
-			 cash = cash - withdrow;
-            console.log("Total amount after deposit: "+cash);
+        var deposit = rl.question("Enter withdrow amount: ",(withdrow));
+			cash = cash - withdrow;
+            console.log("Total amount after withdrow: "+cash);
 			//obj.deQueue();
 			break;
 
@@ -2169,9 +2277,23 @@ bankingCashCounter(cash,people){
 
 //********************************************************************* 
 
-palindromChecker(inputStr){
+/***********************************************************************************
+ *  Purpose         : A palindrome is a string that reads the same forward and backward, for
+                      example, radar, toot, and madam. We would like to construct an algorithm to
+                      input a string of characters and check whether it is a palindrome.      
+ *  @author         : Jyotsana Khaparde
+ *  @file           : palindromeChecker.js
+ *  @param inputStr : taking integer as a input
+ *  @version        : v10.11.0
+ *  @since          : 02-12-2018
+ **********************************************************************************/
+
+palindromChecker(inputStr)
+{
     const obj = require('../dataStructureProgram/Deque.js');
     var deque = new obj.Deque;
+
+    //enqueue each character of inputStr in deque
 
     for(let r=0;r<inputStr.length;r++)
     {
@@ -2180,18 +2302,25 @@ palindromChecker(inputStr){
    
     var flag = true;
     var x ,y ,str1="",str2="";
+
+    //remove that character from first node
+
      for(let i=0;i<deque.Size();i++)  
      {
          x = deque.removeFirstNode();
+         //store value of x in str1
          str1+=x;     
      }
    
      for(let r=0;r<inputStr.length;r++)
-    {
+     {
         deque.enqueue(inputStr.charAt(r));
-    } 
+     } 
+
+     //remove that character from last node
+
       for(let i=0;i<deque.Size();i++)
-     { 
+      { 
          y = deque.removeLastNode();
          if(y==0)
          {
@@ -2199,11 +2328,14 @@ palindromChecker(inputStr){
          }
          else
          {
+           //store value of y in str2  
            str2+=y;
          }  
          
-     }
-   
+      }
+    
+      //compare both string
+
      if(str1 === str2)
      {
          console.log(' string is Palindrome..');
@@ -2215,9 +2347,19 @@ palindromChecker(inputStr){
    
     }  , 
 
- //*******************************************************************    
+ //******************************************************************* 
+ 
+ /***********************************************************************************
+ *  Purpose         : Take 2 string from user and find that string is anagr4am or not.
+                      the start and end clicks.
+ *  @author         : Jyotsana Khaparde         
+ *  @file           : twoDPrime.js
+ *  @version        : v10.11.0
+ *  @since          : 12-09-2018
+ **********************************************************************************/
 
- twoDPrime(){
+ twoDPrime()
+ {
     var i,j,n=1000,k=0;
             var flag = 0;
             var intArray = new Array(n);
@@ -2289,52 +2431,64 @@ palindromChecker(inputStr){
             }
                               
   
-                    
-
-    },
+},
 
    
+//******************************************************************* 
 
-
-  //******************************************************************* 
+/***********************************************************************************
+ *  Purpose         : Number of Binary Search Tree
+ *  @author         : Jyotsana Khaparde
+ *  @file           : binarySearchTree.js
+ *  @version        : v10.11.0
+ *  @since          : 29-12-2018
+ **********************************************************************************/
   
-    
+ /** 
+  * @param  n taking 2 * n from catalan
+  * @param  k taking n from catalan
+  */
+
 binomialCoeff( n, k) 
 { 
     var n = parseInt(n);
     var k = parseInt(k);
-var res = 1; 
+    var res = 1; 
 
 // Since C(n, k) = C(n, n-k) 
-if (k > n - k) 
-k = n - k; 
+    if (k > n - k) 
+        k = n - k; 
 
 // Calculate value of  
 // [n*(n-1)*---*(n-k+1)] /  
 // [k*(k-1)*---*1] 
-for (var i = 0; i < k; ++i) 
-{ 
-res *= (n - i); 
-res /= (i + 1); 
-} 
+    for (var i = 0; i < k; ++i) 
+    { 
+    res *= (n - i); 
+    res /= (i + 1); 
+    } 
 
-return res; 
-}, 
+    return res; 
+    }, 
 
 
-// A Binomial coefficient  
-// based function to find  
-// nth catalan number in  
-// O(n) time 
+ /**
+  * @param  n taking value of count from countBSTS
+  */
 catalan( n) 
 { 
 var n = parseInt(n);
+
 // Calculate value of 2nCn 
 var c = this.binomialCoeff(2 * n, n); 
 
 // return 2nCn/(n+1) 
 return c / (n + 1); 
 }, 
+
+/**
+ * @param n taking integer value from user
+ */
 
 // A function to count number of 
 // BST with n nodes using catalan 
@@ -2349,6 +2503,157 @@ return count;
 },
 
 //************************************************************************* 
+
+/***********************************************************************************
+ *  Purpose1        : Take 2 string from user and find that string is anagr4am or not.
+                      the start and end clicks. 
+ *  Purpose2        : Prime Number Program and store only the numbers in that range that are
+                      Anagrams. For e.g. 17 and 71 are both Prime and Anagrams in the 0 to 1000 range.
+ 
+ *  Purpose3        : Add the Prime Numbers that are Anagram in the Range of 0 ­ 1000 in a Stack using
+                      the Linked List and Print the Anagrams in the Reverse Order.                    
+ *  Purpose4        : Add the Prime Numbers that are Anagram in the Range of 0 ­ 1000 in a Queue using
+                      the Linked List and Print the Anagrams from the Queue.  
+ *  @author         : Jyotsana Khaparde
+ *  @file           : anaPrime.js
+ *  @file           : anaPrimeUsingQueue.js
+ *  @file           : anaReverse.js
+ *  @version        : v10.11.0
+ *  @since          : 04-01-2019
+ **********************************************************************************/
+
+ //s1 = 0 ,s2 = 1000 function for find prime number between 0-1000
+findPrime(s1, s2)
+{
+    var count = 0, flag = 0, k = 0;
+    var prime = [];
+    
+    //loop for prime number between 0 to 1000
+
+    for (var i = s1; i <= s2; i++)
+    {
+        for (var j = 2; j < i; j++)
+        {
+            if (i % j == 0)
+            {
+             //if prime number will not be found then value of flag will be 0
+
+                flag = 0;
+                count++;
+                break;
+            }
+            else
+            {
+                //if prime number will be found then value of flag will be 1
+                flag = 1;
+            }
+        }
+        //if found prime number then it will be store in prime array
+
+        if (flag == 1)
+        {
+            prime[k++] = i;
+        }
+    }
+    return prime;
+},
+
+//function for finding anagram prime
+findAnaPrime(ii, jj)
+{
+    //call findPrime function and store it's value in prime
+    var primes = this.findPrime(ii, jj);
+
+    //find length of prime number which are stored in primes
+    var n = primes.length;
+
+    var anaPrimes = [];
+    var h = 0;
+
+    for (let i = 0; i < primes.length - 1; i++)
+    {
+        for (let j = i + 1; j < primes.length - 1; j++)
+        {
+
+            //call checkAnagram2 function for finding anagram
+            if (this.checkAnagram2(primes[i], primes[j]))
+            {
+                anaPrimes[h++] = primes[i];
+                anaPrimes[h++] = primes[j];
+            }
+
+        }
+    }
+    return anaPrimes;
+},
+
+//function for checking anagram of 2 string
+checkAnagram2(str1, str2)
+{
+    let unsortedStr1 = "" + str1;
+    let unsortedStr2 = "" + str2;
+
+    //check length of both string
+    if (unsortedStr1.length != unsortedStr2.length)
+    {
+        return false;
+    }
+
+    //sort both the string
+    sortedStr1 = this.sort1(unsortedStr1);
+    sortedStr2 = this.sort1(unsortedStr2);
+
+    //call check function for compare both string
+    let b = this.check(sortedStr1, sortedStr2);
+
+    if (b == true)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+},
+
+//sort element which is in str
+sort1(str)
+{
+    let ch = str.split('');
+    for (let i = 0; i < str.length; i++)
+    {
+        for (let j = i + 1; j < str.length; j++)
+        {
+            if (ch[i] > ch[j])
+            {
+                let t = ch[i];
+                ch[i] = ch[j];
+                ch[j] = t;
+            }
+        }
+    }
+    var sortedStr = "";
+
+    for (let i = 0; i < ch.length; i++)
+    {
+        sortedStr += ch[i];
+    }
+    return sortedStr;
+},
+
+//compare both element
+check(s1, s2) {
+    for (let i = 0; i < s1.length; i++)
+    {
+        if (s1.charAt(i) != s2.charAt(i))
+        {
+            return false;
+        }
+    }
+    return true;
+},
+
+
 
  };
     

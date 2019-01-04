@@ -5,7 +5,7 @@
  *  @file           : palindromeChecker.js
  *  @author         : Jyotsana Khaparde
  *  @version        : v10.11.0
- *  @since          : 12-09-2018
+ *  @since          : 02-12-2018
  **********************************************************************************/
 
 var utility =  require('../utility/Utility')
@@ -14,6 +14,10 @@ var rl = utility.userInput();
 
 
 rl.question('Enter any value ',(value)=>{
+    if (isNaN(value))
+         throw "No input or string found , Please Enter a valid input";
+
+         
     utility.palindromChecker(value);
     
     process.exit();

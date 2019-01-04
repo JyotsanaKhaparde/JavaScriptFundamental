@@ -4,7 +4,7 @@
  *  @file           : Calendar.js
  *  @author         : Jyotsana Khaparde
  *  @version        : v10.11.0
- *  @since          : 12-09-2018
+ *  @since          : 03-01-2019
  **********************************************************************************/
 
 var utility =  require('../utility/Utility')
@@ -19,10 +19,10 @@ var m = rl.question("Enter Month: ");
 var y = parseInt(y);
 var m = parseInt(m);
 
-// System.out.println("Enter Year: ");
-// 		int y = MathFunctions.getInt();
-// 		System.out.println("Enter Month: ");
-// 		int m = MathFunctions.getInt();
+if (isNaN(y) || isNaN(m))
+         throw "No input or string found , Please Enter a valid input";
+
+
 		
 		if(y<0 ) {
             console.log("Please enter positive year: ");

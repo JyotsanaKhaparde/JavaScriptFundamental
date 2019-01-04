@@ -6,7 +6,7 @@
  *  @file           : bankingCashCounter.js
  *  @author         : Jyotsana Khaparde
  *  @version        : v10.11.0
- *  @since          : 12-09-2018
+ *  @since          : 29-12-2018
  **********************************************************************************/
 
 var utility =  require('../utility/Utility')
@@ -15,6 +15,14 @@ var rl = require('readline-sync');
 
 var cash = rl.question('total cash balanc in bank:  ');
 var people =  rl.question('number of people in a queue: ');
+
+if (isNaN(cash) || isNaN(people))
+         throw "No input or string found , Please Enter a valid input";
+
+ if (cash === "" || people === "")
+          throw "do not enter space, Please Enter a valid input";
+         
+
 var cash = parseInt(cash);
 var people = parseInt(people);
 

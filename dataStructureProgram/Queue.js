@@ -90,6 +90,21 @@ displayCalender(d){
 }
 count = 0;
 }
+
+displayReverse(head) {
+
+    if (head == null)
+        return;
+
+    this.displayReverse(head.next);
+    show.print(head.data);
+    if (head.next != head)
+        show.print("-->");
+
+}
+getHead() {
+    return this.head;
+}
 }
 
 
