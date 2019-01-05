@@ -1,6 +1,7 @@
 
 	// User defined class node 
-    class Node { 
+    class Node
+    { 
         // constructor 
         constructor(element) 
         { 
@@ -13,7 +14,8 @@
     
     
     // linkedlist class 
-    class LinkedList { 
+    class LinkedList
+    { 
 
         constructor() 
         { 
@@ -39,12 +41,13 @@
         // element and make it head 
         if (this.head == null) 
             this.head = node; 
-        else { 
+        else
+        { 
             current = this.head; 
       
-            // iterate to the end of the 
-            // list 
-            while (current.next) { 
+            // iterate to the end of the list
+            while (current.next)
+            { 
                 current = current.next; 
             } 
       
@@ -64,25 +67,29 @@
     { 
         if (index > 0 && index > this.size) 
             return false; 
-        else { 
+        else
+        { 
             // creates a new node 
             var node = new Node(element); 
             var curr, prev; 
-    
             curr = this.head; 
     
             // add the element to the 
             // first index 
-            if (index == 0) { 
+            if (index == 0)
+            { 
                 node.next = head; 
                 this.head = node; 
-            } else { 
+            }
+            else
+            { 
                 curr = this.head; 
                 var it = 0; 
     
                 // iterate over the list to find 
                 // the position to insert 
-                while (it < index) { 
+                while (it < index)
+                { 
                     it++; 
                     prev = curr; 
                     curr = curr.next; 
@@ -106,18 +113,23 @@
     { 
         if (index > 0 && index > this.size) 
             return -1; 
-        else { 
+        else
+        { 
             var curr, prev, it = 0; 
             curr = this.head; 
             prev = curr; 
       
             // deleting first element 
-            if (index === 0) { 
+            if (index === 0)
+            { 
                 this.head = curr.next; 
-            } else { 
+            }
+            else
+            { 
                 // iterate over the list to the 
                 // position to removce an element 
-                while (it < index) { 
+                while (it < index)
+                { 
                     it++; 
                     prev = curr; 
                     curr = curr.next; 
@@ -146,14 +158,19 @@
         var prev = null; 
     
         // iterate over the list 
-        while (current != null) { 
+        while(current != null)
+        { 
             // comparing element with current 
             // element if found then remove the 
             // and return true 
-            if (current.element === element) { 
-                if (prev == null) { 
+            if (current.element === element)
+            { 
+                if (prev == null)
+                { 
                     this.head = current.next; 
-                } else { 
+                }
+                else
+                { 
                     prev.next = current.next; 
                 } 
                 this.size--; 
@@ -176,13 +193,14 @@
         var current = this.head; 
     
         // iterae over the list 
-        while (current != null) { 
+        while (current != null)
+        { 
             // compare each element of the list 
             // with given element 
-            if (current.element === element) 
+            if(current.element === element) 
                 return count; 
-            count++; 
-            current = current.next; 
+                count++; 
+                current = current.next; 
         } 
     
         // not found 
@@ -204,9 +222,8 @@
                     temp = temp.next;
             }
          return false;
-
         
-     }
+    }
     
     
     //*********************************************************************************************
@@ -237,7 +254,8 @@
     { 
         var curr = this.head; 
         var str = ""; 
-        while (curr) { 
+        while (curr)
+        { 
             str += curr.element + " "; 
             curr = curr.next; 
         } 
@@ -252,20 +270,22 @@
 
    
 
-sortList() {
+    sortList()
+    {
+     var swap;
+     var current = this.head;
+     var current1 = current.next;
+     var n = this.size;
 
-    var swap;
-    var current = this.head;
-    var current1 = current.next;
-    var n = this.size;
-
-    for (let i = 0; i < n; i++) {
-
-        for (let j = 0; j < n - i - 1; j++) {
-
-            if (parseInt(current1.element) < parseInt(current.element)) { //compare element with its previous element
-
-                swap = current.element; //if condition satisfies then swap the values
+     for(let i = 0; i < n; i++)
+     {
+        for(let j = 0; j < n - i - 1; j++)
+        {
+            //compare element with its previous element
+            if(parseInt(current1.element) < parseInt(current.element))
+            { 
+                //if condition satisfies then swap the values
+                swap = current.element; 
 
                 current.element = current1.element; 
 
@@ -273,51 +293,23 @@ sortList() {
 
             }
 
-            if (current1.next != null) {
-
+            if(current1.next != null)
+            {
                 current = current1;
-
                 current1 = current1.next;
-
             }
 
         }
-
         current = this.head;
-
         current1 = current.next;
+     }
+     console.log('List sorted');
     }
 
-    console.log('List sorted');
-  }
-
-//***********************************************************************
 
 }
 
 
-
-
-    
-
-    module.exports = {
+module.exports = {
         LinkedList
-    }
-
-//  var list = new linkedList();
-//     // adding more elements to the list 
-//     list.add(20); 
-//     list.add(30); 
-//     list.add(40); 
-//      list.add(50); 
-
-// // // returns 10 20 30 40 50 
-//  list.printList(); 
-    
-   
-    
-    
-    
-    
-    
-    
+}

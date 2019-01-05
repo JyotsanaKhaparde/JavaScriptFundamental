@@ -10,16 +10,10 @@
  **********************************************************************************/
 
 var utility =  require('../utility/Utility')
-
 var rl = utility.userInput();
 
 
 rl.question('Enter any word for checking: ',(word)=>{
-
-    // if (isNaN(word))
-    //      throw "No input or string found , Please Enter a valid input";
-
-
     utility.unorderdeList(word);
     process.exit();
 })

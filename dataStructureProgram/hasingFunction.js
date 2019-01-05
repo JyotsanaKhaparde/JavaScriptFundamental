@@ -69,8 +69,8 @@ for (var j = 0; j < arr.length; j++) {
             array[10] = obj11.add(arr[j]);
             break;
     }
-    for (var k = 0; k < array.length; k++) {
+    //for (var k = 0; k < array.length; k++) {
         console.log("Slot " + k + " --> " + array[k]);
-    }
+   // }
    // console.log('stored:',arr[0]);
 }

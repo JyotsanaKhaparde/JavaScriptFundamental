@@ -159,9 +159,8 @@ module.exports = {
         //if year is leap year then this if block will be execute
 
         if(year%4 == 0 && year%100 != 0 || year%400 == 0)
-         {
+        {
             console.log(year,' is leap year ');
-            //return true;
         }
 
         //else part - if year is not leap year
@@ -294,16 +293,11 @@ module.exports = {
   /** Aim: program to find the roots of the equation a*x*x + b*x + c.
 
     * @author Jyotsana Khaparde
-
     * @file : Quadratic.js
-
     * @param a integer
     * @param b integer
     * @param c integer
-
-
     * @version v10.11.0
-
     * @since 24/12/2018
 
     */
@@ -342,15 +336,10 @@ module.exports = {
   /**  Aim: program that takes two double t and v and prints the wind chill.
 
     * @author Jyotsana Khaparde
-
     * @file : WindChill.js
-
     * @param t integer
     * @param v integer
-
-
     * @version v10.11.0
-
     * @since 24/12/2018
 
     */
@@ -376,16 +365,11 @@ module.exports = {
     times, averages the results, and prints them out.
 
     * @author Jyotsana Khaparde
-
     * @file : Gambler.js
-
     * @param stack integer
     * @param goal integer
     * @param trials integer
-
-
     * @version v10.11.0
-
     * @since 24/12/2018
 
     */
@@ -444,13 +428,9 @@ module.exports = {
     process.
 
     * @author Jyotsana Khaparde
-
     * @file : Coupon.js
-
     * @param n integer
-
     * @version v10.11.0
-
     * @since 24/12/2018
 
     */
@@ -468,42 +448,42 @@ module.exports = {
 
                //while loop will execute until size is less then the user input n 
 
-                while(size < n)
-                {
-                    // store random value from 1 to n in x
+         while(size < n)
+        {
+             // store random value from 1 to n in x
 
-                    var x = (Math.round(Math.random()*(max - min ))+min);
-                    count=0
+            var x = (Math.round(Math.random()*(max - min ))+min);
+            count=0
 
-                //for loop for checking random number upto length of array 
+             //for loop for checking random number upto length of array 
 
-                for(var i  = 0 ; i< arr.length ; i++)
-                {
-                    // if repeated number found then value of count wil be increase
-
-                    if(arr[i] == x || x < 0)
-                    {
-                       count++
-                       break
-                    }  
-                }
-                    //if count will be zero then only that rabdom number enter in to array
-
-                     if(count==0)
-                    {
-                     arr[j++] =x;
-                        size++;
-                    }
-            }
-
-            //loop for printing distinct random number
-
-            for(var i=0;i<arr.length;i++)
+            for(var i  = 0 ; i< arr.length ; i++)
             {
-                console.log(arr[i])
+            // if repeated number found then value of count wil be increase
+
+             if(arr[i] == x || x < 0)
+             {
+                count++
+                break
+             }  
             }
+            //if count will be zero then only that rabdom number enter in to array
+
+            if(count==0)
+            {
+                arr[j++] =x;
+                size++;
+            }
+        }
+
+        //loop for printing distinct random number
+
+        for(var i=0;i<arr.length;i++)
+        {
+            console.log(arr[i])
+        }
              
-        },
+    },
 
 
 //***********************************************************************************
@@ -513,44 +493,37 @@ module.exports = {
     number of triples that sum to exactly 0.
 
     * @author Jyotsana Khaparde
-
     * @file : triples.js
-
     * @param array array taken by user
     * @param N integer
-
-
-
     * @version v10.11.0
-
     * @since 24/12/2018
 
     */
      
 
     triples(array,N)
-    {
-            
+    {   
         var Count=0;
 
-            //for loop for finding triplets in array
+        //for loop for finding triplets in array
 
-            for(var i  = 0 ; i < N-2 ; i++)
+        for(var i  = 0 ; i < N-2 ; i++)
+        {
+            for(var j = i+1 ; j < N-1 ; j++)
             {
-                for(var j = i+1 ; j < N-1 ; j++)
+                for(var k = j+1 ; j < N ; j++)
                 {
-                    for(var k = j+1 ; j < N ; j++)
+                    if(array[i]+array[j]+array[k] === 0)
                     {
-                        if(array[i]+array[j]+array[k] === 0)
-                        {
-                            Count++;
-                            console.log("triplet are: "+array[i]+","+array[j]+","+array[k])
-                        }
+                         Count++;
+                        console.log("triplet are: "+array[i]+","+array[j]+","+array[k])
                     }
                 }
             }
-               // console.log("triplet not found")
-          },
+        }
+        // console.log("triplet not found")
+    },
 
 
 //*************************************************************************************
@@ -558,13 +531,9 @@ module.exports = {
     /**  Aim:take number as a input from user and prints the Nth harmonic number.
 
     * @author Jyotsana Khaparde
-
     * @file : harmonicNumber.js
-
     * @param number integer taken by user
-
     * @version v10.11.0
-
     * @since 24/12/2018
 
     */
@@ -574,12 +543,12 @@ module.exports = {
             
         var sum =0.0;
 
-            for(var i = 1 ; i <= number ;i++)
-            {
-                sum = sum+ (1.0/i);
-            }
-            console.log('harmonic value is: ',(sum));
-         },
+        for(var i = 1 ; i <= number ;i++)
+        {
+            sum = sum+ (1.0/i);
+        }
+        console.log('harmonic value is: ',(sum));
+    },
 
 
 //*************************************************************************************
@@ -588,13 +557,9 @@ module.exports = {
     /**  Aim:Computes the prime factorization of N using brute force.
 
     * @author Jyotsana Khaparde
-
     * @file : primeFactor.js
-
     * @param number integer
-
     * @version v10.11.0
-
     * @since 24/12/2018
 
     */
@@ -602,8 +567,7 @@ module.exports = {
 
 
     primeFactorization(number)
-    {
-                
+    {    
         for(var i = 2; i< number; i++) 
 	    {
 	        while(number%i == 0) 
@@ -629,22 +593,16 @@ module.exports = {
      the start and end clicks.
 
     * @author Jyotsana Khaparde
-
     * @file : stopWatch.js
-
     * @param start integer
     * @param stop integer
-
-
     * @version v10.11.0
-
     * @since 24/12/2018
 
     */
 
     time() 
     {
-
         var d = new Date();
 
         t = d.getTime()
@@ -655,7 +613,6 @@ module.exports = {
 
     elapsedTime(start, stop) 
     {
-
         var elapsed = stop - start;
 
         return elapsed;
@@ -670,38 +627,32 @@ module.exports = {
     /**  Aim:Take string as a input from user and find all permutation of a String
     
     * @author Jyotsana Khaparde
-
     * @file : PermutationString.js
-
     * @param char_arr character array taken by user
     * @param i integer
-
-
     * @version v10.11.0
-
     * @since 24/12/2018
 
     */
   
    strIterativePermutation(char_arr, i)
-       {   
+    {   
            var utility = require('../utility/Utility');
          
-           
-               if(i == char_arr.length-1)
-               {
-                   // print the shuffled string 
-                       var str = "";
-                       for(var j=0; j<char_arr.length; j++)
-                       {
-                           str=str+char_arr[j];
-                       }
-                       console.log(str);
-               }
-               else
-               {
-                   for(var j=i; j<char_arr.length; j++)
-                   {
+            if(i == char_arr.length-1)
+            {
+            // print the shuffled string 
+                var str = "";
+                for(var j=0; j<char_arr.length; j++)
+                {
+                    str=str+char_arr[j];
+                }
+                console.log(str);
+            }
+            else
+            {
+                for(var j=i; j<char_arr.length; j++)
+                {
                        var tmp = char_arr[i];
                        char_arr[i] = char_arr[j];
                        char_arr[j] = tmp;
@@ -710,22 +661,22 @@ module.exports = {
                        char_arr[i] = char_arr[j];
                        char_arr[j] = tmp1;
                      
-                   }
-               }
-       },
+                }
+            }
+    },
     
 
 
-    swap( a, i, j) {
+    swap( a, i, j)
+    {
         var temp;
         var charArray = [];
         charArray.push(a.toString());
 		temp = charArray[i];
 		charArray[i] = charArray[j];
         charArray[j] = temp;
-        //console.log(charArray);
-   return String.valueOf(charArray);
-},
+        return String.valueOf(charArray);
+    },
 
  
        
@@ -737,16 +688,11 @@ module.exports = {
     printing them out to standard output.
     
     * @author Jyotsana Khaparde
-
     * @file : twoDArray.js
-
     * @param arr array taken by user
     * @param start integer
     * @param size integer
-
-
-     * @version v10.11.0
-
+    * @version v10.11.0
     * @since 24/12/2018
 
     */
@@ -755,19 +701,19 @@ module.exports = {
 
     printIntegerArray(arr,start,size)
     {
-            var util = require('util');
-            var i=start,j=size;
+        var util = require('util');
+        var i=start,j=size;
 
-            // To print Integer 2D array
+        // To print Integer 2D array
 
-             for(i=0;i<arr.length;i++) 
-             {
-                    for(j=0;j<arr.length;j++) 
-                    {
-                        util.print(arr[i][j]+'  ');
-                    }
-                    console.log();
-             }
+        for(i=0;i<arr.length;i++) 
+        {
+            for(j=0;j<arr.length;j++) 
+            {
+                util.print(arr[i][j]+'  ');
+            }
+            console.log();
+        }
     },
     
     //function to print double array
@@ -786,7 +732,7 @@ module.exports = {
                 util.print(arr[i][j]+'  ');
             }
                 console.log();
-            }
+        }
     },
 
    
@@ -799,28 +745,22 @@ module.exports = {
          the start and end clicks.
     
         * @author Jyotsana Khaparde
-
         * @file : anagram.js
-
         * @param string1 integer
         * @param string2 integer
-
-
         * @version v10.11.0
-    
         * @since 24/12/2018
     
         */
     
     
-        anagram(string1,string2)
-        {
+    anagram(string1,string2)
+    {
     
          //Remove all whitespace first
                
           var s1  =  string1.replace("\\s", " ");
           var s2  =  string2.replace("\\s", " ");
-            
           var status;
         
         //if length of both string is not equal then string is not amagram 
@@ -843,25 +783,17 @@ module.exports = {
             s1Array = s1.toLowerCase().split("");
             s2Array = s2.toLowerCase().split("");
                 
-                
-                
             //Sorting both character array
     
             s1Array.sort();
             s2Array.sort();
-              
-    
-            
     
             var flag=0;
                 
             //Check if both arrays are equal
-    
-                
             for(var i =  0 ; i < s1Array.length  ; i++)
             {
                 // if both strings are equal then value of flag will be increase
-    
                 if(s1Array[i]==s2Array[i])
                 {
                     flag++;
@@ -872,20 +804,20 @@ module.exports = {
                 }
             }
     
-                //if flag is 0 then string is not anagram else string is anagram
+            //if flag is 0 then string is not anagram else string is anagram
     
-                if(flag==0)
-                {
+            if(flag==0)
+            {
                                 
-                    console.log('string is not anagram');
-                }
-                else
-                {
-                    console.log('string in anagram');
-                }
-                        
+                console.log('string is not anagram');
             }
-        },
+            else
+            {
+                console.log('string in anagram');
+            }
+                        
+        }
+    },
     
     
     //*****************************************************************************************
@@ -897,11 +829,8 @@ module.exports = {
         the start and end clicks
     
         * @author Jyotsana Khaparde
-
         * @file : primeNumber.js
-    
         * @version v10.11.0
-    
         * @since 24/12/2018
     
         */
@@ -923,51 +852,39 @@ module.exports = {
                  for(var num =i; num>=1; num--)
                  {
                     //all prime number devide only by 1 and itself that means 2 times
-    
                     if(i%num==0)
-                 {
+                    {
     
-                //in 1st iteration value of count will be 0+1=1 and in 2nd iteration 1+1=2
-    
-                  counter = counter + 1;
+                        //in 1st iteration value of count will be 0+1=1 and in 2nd iteration 1+1=2
+                        counter = counter + 1;
+                    }
                  }
-                
-             }
              
-             // if value of count will be 2 then only that number is prime
+                // if value of count will be 2 then only that number is prime
     
-             if (counter == 2)
-             {
-                //Appended the Prime number to the String
-                array1 = parseInt(i);
-              //  console.log("array: ",(array1));
-                this.isAnagram(array1);
+                if(counter == 2)
+                {
+                    //Appended the Prime number to the String
+                    array1 = parseInt(i);
+                    //console.log("array: ",(array1));
+                    this.isAnagram(array1);
     
-                //primeNumbers = primeNumbers + i + " ";
-                this.isPalindrome(i);
-              
-    
-             }	
+                    //primeNumbers = primeNumbers + i + " ";
+                    this.isPalindrome(i);
+                }	
             }	 
-    
-              console.log('');
+            console.log('');
                  
-            },
+        },
 
-            /**
-             * 
-             * @param number  integre taken by user
-             */
+        /**
+        * 
+        * @param number  integre taken by user
+        */
     
     
-            isPalindrome(number)
-            {
-                //this.isAnagram(number);
-               // this.arraySet(number);
-              // console.log(number);
-               
-                
-    
+        isPalindrome(number)
+        {
             var Check = parseInt(number);
             var temp= 0;
             var reverseNumber = 0;
@@ -987,52 +904,43 @@ module.exports = {
                 reverseNumber = reverseNumber * 10 + temp;
             }
     
-                //check if number is equal to reverse number
+            //check if number is equal to reverse number
     
-                if(number === reverseNumber)
-                {
-                   console.log(number,'is a Palindrome number');
+            if(number === reverseNumber)
+            {
+                console.log(number,'is a Palindrome number');
                     
-                }
-                else
-                {
-                    console.log(number);
-                }
+            }
+            else
+            {
+                console.log(number);
+            }
                 
-              //  console.log("in array: ",(array));
         },
-         arraySet(number){
-           
+        arraySet(number)
+        {
              
           //  this.isAnagram(array);
     
-         },
+        },
     
-        isAnagram(array){
-         // console.log('in array: ',(array));
+        isAnagram(array)
+        {
           var str1="",str2="";
-         // var arr = [];
-         
-           // arr.push(array);
-    
-         
-         // console.log("array",arr);
-          
-         for(var i = 0 ; i < array.length; i++)
-         {
+        
+          for(var i = 0 ; i < array.length; i++)
+          {
              console.log('check');
     
-           for(var j = 1 ; j < array.length-1 ; j++)
-           {
+            for(var j = 1 ; j < array.length-1 ; j++)
+            {
                 console.log('check1');
                 str1 = array[i.toString()];
                 str2 = array[j.toString()];
                 console.log("str1",str1);
                 console.log("str2",str2);
-                
-                //this.anagram(str1 ,str2);
-    
-              }
+                    
+            }
           }
         },
     
@@ -1042,15 +950,11 @@ module.exports = {
         date falls on.
     
         * @author Jyotsana Khaparde
-
         * @file : dayOfWeek.js
-
         * @param m taken month by user
         * @param d taken day by user
         * @param y taken year by user
-
         * @version v10.11.0
-    
         * @since 24/12/2018
     
         */
@@ -1072,11 +976,12 @@ module.exports = {
             
            var d0 = (d+x+Math.floor(31*m0/12))%7;	
     
-          d0 = parseInt(d0);
+           d0 = parseInt(d0);
            
-            //using switch case to give day according to the value of d0 that will be from 0 to 6
+           //using switch case to give day according to the value of d0 that will be from 0 to 6
     
-            switch (d0) {
+           switch(d0)
+           {
             
             case 0:
                 console.log('Sunday');
@@ -1108,10 +1013,10 @@ module.exports = {
                 
             default:
                 break;
-            }
+           }
             return d0;
     
-         },
+        },
     
     
     //*********************************************************************************
@@ -1120,13 +1025,9 @@ module.exports = {
          in Celsius or viceversa using the formula.
     
         * @author Jyotsana Khaparde
-
         * @file : temperatureConversion.js
-
         * @param temperature integer taken by user
-
         * @version v10.11.0
-    
         * @since 24/12/2018
     
         */
@@ -1158,16 +1059,11 @@ module.exports = {
          arguments P, Y, and R and calculates the monthly payments
          
         * @author Jyotsana Khaparde
-
         * @file : monthlyPayment.js
-
         * @param y integer
         * @param p integer
         * @param r integer
-
-
         * @version v10.11.0
-    
         * @since 24/12/2018
     
         */
@@ -1192,11 +1088,8 @@ module.exports = {
         given in the input using Newton's method.
          
         * @author Jyotsana Khaparde
-
         * @param c integer
-
         * @version v10.11.0
-    
         * @since 24/12/2018
     
         */
@@ -1242,13 +1135,9 @@ module.exports = {
         the decimal number typed as the input.
          
         * @author Jyotsana Khaparde
-
         * @file : toBinary.js
-
         * @param number take decimal number from user
-
         * @version v10.11.0
-    
         * @since 24/12/2018
     
         */
@@ -1296,13 +1185,9 @@ module.exports = {
         function and perform the following functions - Swap nibbles and find the new number.
          
         * @author Jyotsana Khaparde
-
         * @file : binary.js
-
         * @param number integer
-
         * @version v10.11.0
-    
         * @since 24/12/2018
     
         */
@@ -1317,69 +1202,68 @@ module.exports = {
             
             //condition for getting remender
             
-                    while(n >=1)
+                while(n >=1)
+                {
+                    binary=binary+(n%2);
+                    n = Math.floor(n/2);
+                }
+                    
+            //condition-if the element of binary number is greater then 0 or less then 4.
+                    
+                    
+                if(binary.length > 0 && binary.length < 8)
+                {
+                    for(var i = 0 ; i < 8-binary.length ; i++)
                     {
-                        binary=binary+(n%2);
-                        n = Math.floor(n/2);
+                        sum = sum + 0;
                     }
-                    
-                    //condition-if the element of binary number is greater then 0 or less then 4.
-                    
-                    
-                    if(binary.length > 0 && binary.length < 8)
-                    {
-                        for(var i = 0 ; i < 8-binary.length ; i++)
-                        {
-                            sum = sum + 0;
-                        }
                         binary = binary + sum;
-                    }
+                }
                     
-                    //reverse the remender for getting binary number.
+                //reverse the remender for getting binary number.
                     
-                    for(var i = binary.length - 1 ;i >= 0 ; i--)
-                    {
-                        reverse = reverse + binary.charAt(i);
-                    }
+                for(var i = binary.length - 1 ;i >= 0 ; i--)
+                {
+                    reverse = reverse + binary.charAt(i);
+                }
     
-                    console.log('decimal to binary: ',(reverse));
+                console.log('decimal to binary: ',(reverse));
     
-                    //reverse that binary number
+                //reverse that binary number
     
-                    var nibble1 = reverse;
+                var nibble1 = reverse;
+                var b1="";
+                var b2="";
+                var s = "";
+    
+                //loop for getting first nibble
+    
+                for(var i = 0 ; i < 4 ;i++)
+                {
+                    b1 = b1 + nibble1.charAt(i);
+                }
+    
+                console.log('nibbel 1: ',(b1));
+    
+                //loop for getting second nibble
+    
+                for(var i = 4 ; i <= 7 ; i++)
+                {
+                    b2 = b2 + nibble1.charAt(i);
+                }
+    
+                console.log('nibbel 2: '+b2);
+    
+                //swap that seperate 2 nibble  by adding them
                     
-                    var b1="";
-                    var b2="";
-                    var s = "";
+                s = s+b2+b1;
+                console.log('swapped nibble : ',(s));
     
-                    //loop for getting first nibble
+                //convert binary to decimal 
     
-                    for(var i = 0 ; i < 4 ;i++)
-                    {
-                        b1 = b1 + nibble1.charAt(i);
-                    }
-    
-                    console.log('nibbel 1: ',(b1));
-    
-                    //loop for getting second nibble
-    
-                    for(var i = 4 ; i <= 7 ; i++)
-                    {
-                        b2 = b2 + nibble1.charAt(i);
-                    }
-    
-                    console.log('nibbel 2: '+b2);
-    
-                    //swap that seperate 2 nibble  by adding them
-                    
-                    s = s+b2+b1;
-                    console.log('swapped nibble : ',(s));
-    
-                    //convert binary to decimal 
-    
-                    var BtoD = parseInt(s, 2);
-                    console.log('Binary to decimal: ',(BtoD));
-                 },
+                var BtoD = parseInt(s, 2);
+                console.log('Binary to decimal: ',(BtoD));
+        },
     
     
     //***************************************************************************************
@@ -1388,13 +1272,9 @@ module.exports = {
         search the list.The program reports if the search word is found in the list.
          
         * @author Jyotsana Khaparde
-
         * @file : binarySearchOfString.js
-
         * @param word integer
-
         * @version v10.11.0
-    
         * @since 24/12/2018
     
         */         
@@ -1458,7 +1338,6 @@ module.exports = {
                 if(word === check)
                 {
                     console.log('yes, word is found');
-    
                 }
                 else
                 {
@@ -1475,13 +1354,9 @@ module.exports = {
         search the list.The program reports if the search number is found in the list.
          
         * @author Jyotsana Khaparde
-
         * @file : binarySearchOfInt.js
-
         * @param number integer
-
         * @version v10.11.0
-    
         * @since 24/12/2018
     
         */         
@@ -1510,21 +1385,21 @@ module.exports = {
            var check = "";
            var arrOfStr = [];
     
-            //split that words from the file where "," is used
+           //split that words from the file where "," is used
     
-            arrOfStr = s.split(",", length); 
+           arrOfStr = s.split(",", length); 
            
     
-            // search the number with binary search.
+           // search the number with binary search.
             
-            var first = 0;
-            var last = arrOfStr.length;
+           var first = 0;
+           var last = arrOfStr.length;
     
-            //find min point of array
+          //find min point of array
     
-            var mid  =  (first + last)/2;
+           var mid  =  (first + last)/2;
             
-            //loop for search number upto mid point.
+           //loop for search number upto mid point.
             
             
             for(var i = 0 ; i <= mid ; i++) 
@@ -1549,7 +1424,6 @@ module.exports = {
                 if(number === check)
                 {
                     console.log('yes, number is found');
-    
                 }
                 else
                 {
@@ -1562,13 +1436,9 @@ module.exports = {
         /**  Aim: Reads an integers from file prints them in sorted order using Bubble Sort.
     
         * @author Jyotsana Khaparde
-
         * @file : bubbleSortOfInteger.js
-
         * @param size integer
-
         * @version v10.11.0
-    
         * @since 24/12/2018
     
         */
@@ -1576,16 +1446,16 @@ module.exports = {
      
         bubbleSortOfInteger(size)
         {
-        var utility =  require('../utility2/Utility')
+            var utility =  require('../utility2/Utility')
     
-        var rl = utility.userInput();
+            var rl = utility.userInput();
         
-         var arr=[];
-         var temp;
-         var len=parseInt(size);
-         console.log('size is: ',len);
-         console.log("Enter array elements:");//taking array elements from user
-         recurrsion(len);
+            var arr=[];
+            var temp;
+            var len=parseInt(size);
+            console.log('size is: ',len);
+            console.log("Enter array elements:");//taking array elements from user
+            recurrsion(len);
          function recurrsion(len)
          {
              if(len>0)
@@ -1602,7 +1472,7 @@ module.exports = {
              }
              else
              {
-                 rl.close();
+                rl.close();
                 for(var i =  0 ; i < arr.length-1 ; i++)
                 {
                     for(var j = i+1 ; j < arr.length ; j++)
@@ -1634,13 +1504,9 @@ module.exports = {
         /**  Aim: Reads an integers from file prints them in sorted order using Bubble Sort.
     
         * @author Jyotsana Khaparde
-
         * @file : bubbleSort.js
-
         * @param f integer
-
         * @version v10.11.0
-    
         * @since 24/12/2018
     
         */
@@ -1660,20 +1526,20 @@ module.exports = {
     
          //loop for doing bubble sort
             
-            for(var i =  0 ; i < n-1 ; i++)
+        for(var i =  0 ; i < n-1 ; i++)
+        {
+            for(var j = i+1 ; j < n ; j++)
             {
-                for(var j = i+1 ; j < n ; j++)
-                {
-                    //if first element of loop is greater then second element then swap
+            //if first element of loop is greater then second element then swap
     
-                    if(array[i]>array[j])
-                    {
-                        temp = array[j];
-                        array[j]=array[i];
-                        array[i]= temp;
-                    }
+                if(array[i]>array[j])
+                {
+                    temp = array[j];
+                    array[j]=array[i];
+                    array[i]= temp;
                 }
             }
+        }
             
             //sorted list of number
             
@@ -1681,7 +1547,7 @@ module.exports = {
             {
                 console.log('sorted list: ',array[i]);
             }
-        },
+    },
     
     
      //***************************************************************************************
@@ -1689,13 +1555,9 @@ module.exports = {
         /** Aim: Reads an string from file prints them in sorted order using Bubble Sort.
     
         * @author Jyotsana Khaparde
-
         * @file : bubbleSortOfString.js
-
         * @param f integer
-   
         * @version v10.11.0
-    
         * @since 24/12/2018
     
         */
@@ -1716,18 +1578,68 @@ module.exports = {
     
          //loop for doing bubble sort
             
-            for(var i =  0 ; i < n-1 ; i++)
+        for(var i =  0 ; i < n-1 ; i++)
+        {
+            for(var j = i+1 ; j < n ; j++)
             {
-                for(var j = i+1 ; j < n ; j++)
-                {
-                    //if first element of loop is greater then second element then swap
+            //if first element of loop is greater then second element then swap
     
-                    if(array[i]>array[j])
+                if(array[i]>array[j])
+                {
+                    temp = array[j];
+                    array[j]=array[i];
+                    array[i]= temp;
+                }
+            }
+        }
+            
+        //sorted list of number
+            
+        for(var i = 0 ; i < array.length ; i++)
+        {
+            console.log(array[i]);
+        }
+    },
+    
+    
+    //*************************************************************************************
+    
+        /**  Aim: Reads a strings from standard input and prints them in sorted order.
+        Uses insertion sort.
+    
+        * @author Jyotsana Khaparde
+        * @file : insertionSort.js
+        * @param f integer
+        * @version v10.11.0
+        * @since 24/12/2018
+    
+        */
+      
+        insertionSort(f)
+        {
+            var temp;
+            var s = f;
+            var n = f.length;
+            var array =[];
+    
+            //split that words from the file where "," is used
+        
+            array = s.split(",", n); 
+        
+            //loop for doing insertion sort
+                        
+            for(var i = 1; i < array.length ; i++)
+            {
+                for(var j = 0 ; j < i ; j++)
+                {
+                    //swap if any number is less then the any of previous number.
+        
+                    if(array[i] < array[j])
                     {
                         temp = array[j];
-                        array[j]=array[i];
+                        array[j]= array[i];
                         array[i]= temp;
-                    }
+                    }  
                 }
             }
             
@@ -1737,60 +1649,6 @@ module.exports = {
             {
                 console.log(array[i]);
             }
-        },
-    
-    
-    //*************************************************************************************
-    
-        /**  Aim: Reads a strings from standard input and prints them in sorted order.
-        Uses insertion sort.
-    
-        * @author Jyotsana Khaparde
-
-        * @file : insertionSort.js
-
-        * @param f integer
-
-        * @version v10.11.0
-    
-        * @since 24/12/2018
-    
-        */
-      
-        insertionSort(f)
-        {
-        var temp;
-        var s = f;
-        var n = f.length;
-        var array =[];
-    
-        //split that words from the file where "," is used
-    
-        array = s.split(",", n); 
-    
-        //loop for doing insertion sort
-                    
-        for(var i = 1; i < array.length ; i++)
-        {
-            for(var j = 0 ; j < i ; j++)
-            {
-                //swap if any number is less then the any of previous number.
-    
-                if(array[i] < array[j])
-                {
-                    temp = array[j];
-                    array[j]= array[i];
-                    array[i]= temp;
-                }  
-            }
-        }
-        
-        //sorted list of number
-        
-        for(var i = 0 ; i < array.length ; i++)
-        {
-            console.log(array[i]);
-        }
     
     
       },
@@ -1802,13 +1660,9 @@ module.exports = {
         of Notes as well as the Notes to be returned by the Vending Machine as a change.
     
         * @author Jyotsana Khaparde
-
         * @file : vendingMatchine.js
-
         * @param amount integer
-    
         * @version v10.11.0
-    
         * @since 24/12/2018
     
         */
@@ -1854,13 +1708,9 @@ module.exports = {
 
     
         * @author Jyotsana Khaparde
-        
         * @file : guessNumber.js
-
         * @param number integer
-
         * @version v10.11.0
-    
         * @since 24/12/2018
     
         */
@@ -1868,7 +1718,7 @@ module.exports = {
     
     guessnumber(number)
     {
-      //  console.log("nuimber is: ",number);
+        //console.log("nuimber is: ",number);
         console.log("Think a number between 0 to ",(number-1));
     
         var read=require('readline-sync');
@@ -1877,14 +1727,13 @@ module.exports = {
         var flag = true;
     
         //var n = 0;
-       // n = Math.sqrt(number, 2);
+        // n = Math.sqrt(number, 2);
     
-       
         for (let i = 0; i <= number && flag; i++)
-         {
+        {
             mid = Math.floor((low + high) / 2);
             if (low >= high)
-             {
+            {
                 flag = false;
             } 
             else 
@@ -1894,11 +1743,10 @@ module.exports = {
                 {
                     high = mid;
                 }
-                 else if (ans == 0)
+                 else
+                if (ans == 0)
                 {
                     low = mid + 1;
-    
-    
                 }
                 else
                 {
@@ -1919,13 +1767,9 @@ module.exports = {
 
     
         * @author Jyotsana Khaparde
-
         * @file : mergeSort.js
-
         * @param arr integer
-
         * @version v10.11.0
-    
         * @since 24/12/2018
     
         */
@@ -1935,7 +1779,7 @@ module.exports = {
     {
         var utility =  require('../utility2/Utility');
         if (arr.length === 1)
-         {
+        {
           // return once we hit an array with a single item
           return arr
         }
@@ -1950,11 +1794,11 @@ module.exports = {
         const right = arr.slice(middle) 
       
         return utility.merge(utility.mergeSort(left),utility.mergeSort(right))
-      },
+    },
     
-      // compare the arrays item by item and return the concatenated result
-        merge(left, right)
-         {
+    // compare the arrays item by item and return the concatenated result
+    merge(left, right)
+    {
         let result = []
         let indexLeft = 0
         let indexRight = 0
@@ -1962,19 +1806,19 @@ module.exports = {
         while (indexLeft < left.length && indexRight < right.length) 
         {
           if (left[indexLeft] < right[indexRight])
-           {
+          {
             result.push(left[indexLeft])
             indexLeft++
           }
-            else
-            {
+          else
+          {
             result.push(right[indexRight])
             indexRight++
           }
         }
       
-        return result.concat(left.slice(indexLeft)).concat(right.slice(indexRight))
-      },
+     return result.concat(left.slice(indexLeft)).concat(right.slice(indexRight))
+    },
 
 
 //*************************************************************************
@@ -2031,18 +1875,18 @@ unorderdeList(word)
             list.removeFrom(Deletedata);
             list.printList();
                   
-            }
-            else 
-            {
+        }
+        else 
+        {
                 console.log("this word is not in the list so add it");
                 list.add(word);
                list.printList();
                           
-            }
+        }
             var writeMe = list.printList();
            fileStream.writeFileSync('writeUnorderedList',writeMe);
 
-    },
+},
 
 
     //*********************************************************************
@@ -2086,28 +1930,29 @@ unorderdeList(word)
 
         //var new_node1;          
         var list = new linked.LinkedList; 
-        for(var i = 0 ; i < arrOfStr.length ; i++) {
+        for(var i = 0 ; i < arrOfStr.length ; i++)
+        {
            list.add(arrOfStr[i]);
         }
         list.printList();
-
-            if(list.search(number))
-            {
-                var s1 = number ;
-                console.log("this word is alredy in list so remove it");
-                var Deletedata = list.indexOf(s1);
-                list.removeFrom(Deletedata);
-                list.printList();
+            
+        if(list.search(number))
+        {
+            var s1 = number ;
+            console.log("this word is alredy in list so remove it");
+            var Deletedata = list.indexOf(s1);
+            list.removeFrom(Deletedata);
+            list.printList();
                       
-                }
-                else 
-                {
-                    console.log("this word is not in the list so add it");
-                   list.add(number);
-                   list.sortList();
-                   list.printList();
+        }
+        else 
+        {
+            console.log("this word is not in the list so add it");
+            list.add(number);
+            list.sortList();
+            list.printList();
                               
-                }
+        }
     
     
 
@@ -2131,33 +1976,34 @@ unorderdeList(word)
 balancedParantheses(expression)
 {
     const stackUsingLinked = require('../dataStructureProgram/Stack.js');
-        var list = new stackUsingLinked.Stack;
-        var char_array = [];
-        var str = "";
-        var x = 0, y = 0;
+    var list = new stackUsingLinked.Stack;
+    var char_array = [];
+    var str = "";
+    var x = 0, y = 0;
 
-        //loop for pushing each character of expression in array
+    //loop for pushing each character of expression in array
 
-        for(let i = 0;i<expression.length;i++)
-        {
-            char_array.push(expression.charAt(i.toString()));
-        }
-        for(let z=0;z<char_array.length;z++)
-        {
-            //take element of that array in string
+    for(let i = 0;i<expression.length;i++)
+    {
+        char_array.push(expression.charAt(i.toString()));
+    }
+    for(let z=0;z<char_array.length;z++)
+    {
+        //take element of that array in string
             
-            str = char_array[z.toString()];
-            if( str === '{' || str === '[' || str === '(' )
-            {
-                list.push(str.toString());
-                x++;
-            }
-            else if(str === '}' || str === ']' || str === ')')
-            {
-                list.pop();
-                y++;
-            }
-        } 
+        str = char_array[z.toString()];
+        if( str === '{' || str === '[' || str === '(' )
+        {
+            list.push(str.toString());
+            x++;
+        }
+        else
+        if(str === '}' || str === ']' || str === ')')
+        {
+            list.pop();
+            y++;
+        }
+    } 
        
         if(x == y)
         {   
@@ -2169,41 +2015,7 @@ balancedParantheses(expression)
             console.log('Parentheses are not balanced');
 
         }
-    // const stack = require('../dataStructureProgram/Stack.js');
-    // var obj = new stack.Stack; 
-
-    //     //taking array to store expression
-    //     var arr = [];
-    //     arr = value.split("");
-	
-		
-    //     for(var i = 0 ; i < arr.length ; i++)
-    //      {
-    //         //if '(' will be found then push it in arr 
-            
-    //         if(arr[i] === '(')
-    //         {
-	// 			obj.push('(');
-    //         }
-
-    //         //if ')' will be found then push it in arr 
-
-    //         if(arr[i] === ')')
-    //         {
-	// 			obj.pop();
-
-	// 		}
-			
-	// 	}
-    //     if(obj.isEmpty() )
-    //     {
-    //         console.log('Parentheses are balanced');
-            
-	// 	}else {
-    //         console.log('Parentheses are not balanced');
-            
-	// 	}
-
+   
 },
 
 //*************************************************************************
@@ -2345,7 +2157,7 @@ palindromChecker(inputStr)
          console.log(' string is not Palindrome..');
      }
    
-    }  , 
+}, 
 
  //******************************************************************* 
  
@@ -2361,74 +2173,63 @@ palindromChecker(inputStr)
  twoDPrime()
  {
     var i,j,n=1000,k=0;
-            var flag = 0;
-            var intArray = new Array(n);
+    var flag = 0;
+    var intArray = new Array(n);
             
-            for(i=0;i<=n;i++)
+    for(i=0;i<=n;i++)
+    {
+        for(var z=2;z<i;z++)
+        {
+            if(i%z==0)
             {
-                for(var z=2;z<i;z++)
-                {
-                    if(i%z==0)
-                    {
-                        flag = 0;
-                        break;
-                    }
-                    else                    
-                        flag = 1;                       
-                }
-                if(flag == 1)
-                {
-                    console.log(i+" ");
-                    
-                   // System.out.print(i+" ");
-                    intArray[k] = i;
-                    k++;
-                }
+                flag = 0;
+                break;
             }
+                else                    
+                flag = 1;                       
+        }
+        if(flag == 1)
+        {
+            console.log(i+" ");
+            intArray[k] = i;
+            k++;
+        }
+    }
             
-            var a=new Array(10,30);
-            var b=new Array(10,30);
+    var a=new Array(10,30);
+    var b=new Array(10,30);
     
-            var count=0;
-              for(i=0;i<10;i++)
-                {
-                   for(j=0;j<25;j++)
-                    {
-                        if(count==intArray.length) 
-                            break;
+    var count=0;
+    for(i=0;i<10;i++)
+    {
+        for(j=0;j<25;j++)
+        {
+            if(count==intArray.length) 
+            break;
 
-                    a[i][j]=intArray[count];
-                    count++;
-                    }
-                }
-                console.log("Count is "+count);
-                
-            //System.out.println("Count is "+count);  
-                    
-            
-            var pause = 100;//taking for partition purpose
+            a[i][j]=intArray[count];
+            count++;
+        }
+    }
+    console.log("Count is "+count);
+    var pause = 100;//taking for partition purpose
               
-            console.log("2d Array :");
+    console.log("2d Array :");
             
-            //System.out.println("2d Array :"); 
             
-            for(i=0;i<10;i++)
+    for(i=0;i<10;i++)
+    {
+        for(j=0;j<25;j++)
+        {   
+            if(a[i][j]>pause)
             {
-               for(j=0;j<25;j++)
-                {   
-                  
-                   if(a[i][j]>pause)
-                     {
-                         pause=pause+100;
-                         console.log();
-                         
-                        // System.out.println();
-                     } 
-                     console.log(a[i][j]+" ");
+                pause=pause+100;
+                console.log();      
+            } 
+            console.log(a[i][j]+" ");
                       
-                  // System.out.print(a[i][j]+" ");
-                }
-            }
+        }
+    }
                               
   
 },
@@ -2455,52 +2256,52 @@ binomialCoeff( n, k)
     var k = parseInt(k);
     var res = 1; 
 
-// Since C(n, k) = C(n, n-k) 
+    // Since C(n, k) = C(n, n-k) 
     if (k > n - k) 
         k = n - k; 
 
-// Calculate value of  
-// [n*(n-1)*---*(n-k+1)] /  
-// [k*(k-1)*---*1] 
+    // Calculate value of  
+    // [n*(n-1)*---*(n-k+1)] /  
+    // [k*(k-1)*---*1] 
     for (var i = 0; i < k; ++i) 
     { 
-    res *= (n - i); 
-    res /= (i + 1); 
+        res *= (n - i); 
+        res /= (i + 1); 
     } 
 
     return res; 
     }, 
 
 
- /**
-  * @param  n taking value of count from countBSTS
-  */
-catalan( n) 
-{ 
-var n = parseInt(n);
+    /**
+     * @param  n taking value of count from countBSTS
+     */
+    catalan( n) 
+    { 
+        var n = parseInt(n);
 
-// Calculate value of 2nCn 
-var c = this.binomialCoeff(2 * n, n); 
+        // Calculate value of 2nCn 
+        var c = this.binomialCoeff(2 * n, n); 
 
-// return 2nCn/(n+1) 
-return c / (n + 1); 
-}, 
+        // return 2nCn/(n+1) 
+        return c / (n + 1); 
+    }, 
 
-/**
- * @param n taking integer value from user
- */
+    /**
+     * @param n taking integer value from user
+     */
 
-// A function to count number of 
-// BST with n nodes using catalan 
-countBST( n) 
-{ 
-// find nth catalan number 
-var n = parseInt(n);
-var count = this.catalan(n); 
+    // A function to count number of 
+    // BST with n nodes using catalan 
+    countBST( n) 
+    { 
+        // find nth catalan number 
+        var n = parseInt(n);
+        var count = this.catalan(n); 
 
-// return nth catalan number 
-return count; 
-},
+        // return nth catalan number 
+        return count; 
+    },
 
 //************************************************************************* 
 
@@ -2522,136 +2323,137 @@ return count;
  *  @since          : 04-01-2019
  **********************************************************************************/
 
- //s1 = 0 ,s2 = 1000 function for find prime number between 0-1000
-findPrime(s1, s2)
-{
-    var count = 0, flag = 0, k = 0;
-    var prime = [];
-    
-    //loop for prime number between 0 to 1000
-
-    for (var i = s1; i <= s2; i++)
+    //s1 = 0 ,s2 = 1000 function for find prime number between 0-1000
+    findPrime(s1, s2)
     {
-        for (var j = 2; j < i; j++)
-        {
-            if (i % j == 0)
-            {
-             //if prime number will not be found then value of flag will be 0
+        var count = 0, flag = 0, k = 0;
+        var prime = [];
+        
+        //loop for prime number between 0 to 1000
 
-                flag = 0;
-                count++;
-                break;
+        for (var i = s1; i <= s2; i++)
+        {
+            for (var j = 2; j < i; j++)
+            {
+                if (i % j == 0)
+                {
+                //if prime number will not be found then value of flag will be 0
+
+                    flag = 0;
+                    count++;
+                    break;
+                }
+                else
+                {
+                    //if prime number will be found then value of flag will be 1
+                    flag = 1;
+                }
             }
-            else
+            //if found prime number then it will be store in prime array
+
+            if (flag == 1)
             {
-                //if prime number will be found then value of flag will be 1
-                flag = 1;
-            }
-        }
-        //if found prime number then it will be store in prime array
-
-        if (flag == 1)
-        {
-            prime[k++] = i;
-        }
-    }
-    return prime;
-},
-
-//function for finding anagram prime
-findAnaPrime(ii, jj)
-{
-    //call findPrime function and store it's value in prime
-    var primes = this.findPrime(ii, jj);
-
-    //find length of prime number which are stored in primes
-    var n = primes.length;
-
-    var anaPrimes = [];
-    var h = 0;
-
-    for (let i = 0; i < primes.length - 1; i++)
-    {
-        for (let j = i + 1; j < primes.length - 1; j++)
-        {
-
-            //call checkAnagram2 function for finding anagram
-            if (this.checkAnagram2(primes[i], primes[j]))
-            {
-                anaPrimes[h++] = primes[i];
-                anaPrimes[h++] = primes[j];
-            }
-
-        }
-    }
-    return anaPrimes;
-},
-
-//function for checking anagram of 2 string
-checkAnagram2(str1, str2)
-{
-    let unsortedStr1 = "" + str1;
-    let unsortedStr2 = "" + str2;
-
-    //check length of both string
-    if (unsortedStr1.length != unsortedStr2.length)
-    {
-        return false;
-    }
-
-    //sort both the string
-    sortedStr1 = this.sort1(unsortedStr1);
-    sortedStr2 = this.sort1(unsortedStr2);
-
-    //call check function for compare both string
-    let b = this.check(sortedStr1, sortedStr2);
-
-    if (b == true)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-},
-
-//sort element which is in str
-sort1(str)
-{
-    let ch = str.split('');
-    for (let i = 0; i < str.length; i++)
-    {
-        for (let j = i + 1; j < str.length; j++)
-        {
-            if (ch[i] > ch[j])
-            {
-                let t = ch[i];
-                ch[i] = ch[j];
-                ch[j] = t;
+                prime[k++] = i;
             }
         }
-    }
-    var sortedStr = "";
+        return prime;
+    },
 
-    for (let i = 0; i < ch.length; i++)
+    //function for finding anagram prime
+    findAnaPrime(ii, jj)
     {
-        sortedStr += ch[i];
-    }
-    return sortedStr;
-},
+        //call findPrime function and store it's value in prime
+        var primes = this.findPrime(ii, jj);
 
-//compare both element
-check(s1, s2) {
-    for (let i = 0; i < s1.length; i++)
+        //find length of prime number which are stored in primes
+        var n = primes.length;
+
+        var anaPrimes = [];
+        var h = 0;
+
+        for (let i = 0; i < primes.length - 1; i++)
+        {
+            for (let j = i + 1; j < primes.length - 1; j++)
+            {
+
+                //call checkAnagram2 function for finding anagram
+                if (this.checkAnagram2(primes[i], primes[j]))
+                {
+                    anaPrimes[h++] = primes[i];
+                    anaPrimes[h++] = primes[j];
+                }
+
+            }
+        }
+        return anaPrimes;
+    },
+
+    //function for checking anagram of 2 string
+    checkAnagram2(str1, str2)
     {
-        if (s1.charAt(i) != s2.charAt(i))
+        let unsortedStr1 = "" + str1;
+        let unsortedStr2 = "" + str2;
+
+        //check length of both string
+        if (unsortedStr1.length != unsortedStr2.length)
         {
             return false;
         }
-    }
-    return true;
-},
+
+        //sort both the string
+        sortedStr1 = this.sort1(unsortedStr1);
+        sortedStr2 = this.sort1(unsortedStr2);
+
+        //call check function for compare both string
+        let b = this.check(sortedStr1, sortedStr2);
+
+        if (b == true)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    },
+
+    //sort element which is in str
+    sort1(str)
+    {
+        let ch = str.split('');
+        for (let i = 0; i < str.length; i++)
+        {
+            for (let j = i + 1; j < str.length; j++)
+            {
+                if (ch[i] > ch[j])
+                {
+                    let t = ch[i];
+                    ch[i] = ch[j];
+                    ch[j] = t;
+                }
+            }
+        }
+        var sortedStr = "";
+
+        for (let i = 0; i < ch.length; i++)
+        {
+            sortedStr += ch[i];
+        }
+        return sortedStr;
+    },
+
+    //compare both element
+    check(s1, s2)
+    {
+        for (let i = 0; i < s1.length; i++)
+        {
+            if (s1.charAt(i) != s2.charAt(i))
+            {
+                return false;
+            }
+        }
+        return true;
+    },
 
 
 

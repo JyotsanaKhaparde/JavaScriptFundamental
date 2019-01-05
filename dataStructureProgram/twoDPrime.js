@@ -19,9 +19,7 @@ var final = 100;
 
 for (let i = 0; i < 10; i++)
 {
-   twoDPrimes[i] = Utility.findPrime(initial, final);
-
-    //anaPrimes[i] = Utility.findAnaPrime(initial, final);
+    twoDPrimes[i] = Utility.findPrime(initial, final);
     initial = initial + 100;
     final = final + 100;
 }

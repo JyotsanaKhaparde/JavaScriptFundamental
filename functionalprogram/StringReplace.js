@@ -15,10 +15,7 @@ rl.question("please enter your name: ",(name)=>{
     process.exit();
 });
 
-/*rl.question("please enter your name: ",function(name)
-{
-    utility.replceName(name);
-});*/
+
 
 
 

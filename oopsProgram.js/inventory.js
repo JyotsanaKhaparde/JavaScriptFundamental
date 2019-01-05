@@ -23,6 +23,7 @@ function inventory()
     console.log("1: Rice");
     console.log("2: Wheat");
     console.log("3: Pulses");
+    
 
     //take user input for choice
     var item = read.question("Please enter your choice: ");

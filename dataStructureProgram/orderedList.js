@@ -14,13 +14,6 @@ var rl = utility.userInput();
 
 
 rl.question('Enter any word for checking: ',(number)=>{
-
-    // if (isNaN(number))
-    //      throw "No input or string found , Please Enter a valid input";
-
-   
-
-
     utility.orderedList(number);
     process.exit();
 })

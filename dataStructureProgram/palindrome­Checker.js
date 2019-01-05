@@ -16,9 +16,7 @@ var rl = utility.userInput();
 rl.question('Enter any value ',(value)=>{
     if (isNaN(value))
          throw "No input or string found , Please Enter a valid input";
-
-         
+   
     utility.palindromChecker(value);
-    
     process.exit();
 })

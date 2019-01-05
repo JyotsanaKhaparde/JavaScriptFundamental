@@ -11,18 +11,18 @@
 var Utility = require('../utility/Utility');
 var linkedQueue = require('../dataStructureProgram/Queue.js');
 
-function printAnaprimes() {
+function printAnaprimes()
+{
     var queueLink = new linkedQueue.Queue;
 
-    // var Utility = require('../utility/utility');
     var show = require('util');
 
     var anaPrimes = [[]];
     anaPrimes = Utility.findAnaPrime(0, 1000);
 
-    for (let i = 0; i < anaPrimes.length; i++) {
+    for (let i = 0; i < anaPrimes.length; i++)
+    {
         queueLink.enqueue(anaPrimes[i]);
-        //queueLink.push(anaPrimes[i]);
     }
 
     console.log();
@@ -34,6 +34,6 @@ function printAnaprimes() {
     console.log("Reversed LinkList->");
     console.log();
     queueLink.print();
-    //queueLink.displayReverse(top);
 }
+
 printAnaprimes();

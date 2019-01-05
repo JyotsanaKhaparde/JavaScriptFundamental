@@ -15,11 +15,14 @@ const rl = readline.createInterface({
 
 var utility = require('../utility/Utility');
 rl.question("Enter number of time flip coin: ",(flip)=>{
-    if(flip < 0){
+    if(flip < 0)
+    {
         console.log('please enter positive number: ');
         process.exit();
 
-    }else{
+    }
+    else
+    {
         rl.question('enter number of time flip coin: ',(flip));
         utility.flipCoin(flip);
         process.exit();

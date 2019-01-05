@@ -19,7 +19,7 @@ rl.question('Enter value of b: ',(b)=>
 rl.question('Enter value of c: ',(c)=>
 {
     utility.quadratic(a,b,c);
-   process.exit();
+    process.exit();
 }
 
 )));

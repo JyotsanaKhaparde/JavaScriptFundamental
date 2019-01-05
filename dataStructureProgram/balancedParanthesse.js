@@ -10,22 +10,17 @@
  **********************************************************************************/
 
 var utility =  require('../utility/Utility')
-
 var rl = utility.userInput();
 
 
 rl.question('Enter expression ',(value)=>{
-    
         if(value===" ")
         {
             console.log('please enter valid input');
-    
         }
         else
         {
             utility.balancedParantheses(value);
             process.exit();
         } 
-    
-
 })

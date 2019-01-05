@@ -26,7 +26,8 @@ class Deque
         {
             this.head = newNode;
             this.tail = newNode;
-        } else 
+        }
+        else 
         {
             this.tail.next = newNode;
             this.tail = newNode;
@@ -36,7 +37,8 @@ class Deque
     removeFirstNode() 
     {
         var newNode;
-        if (this.head !== null) {
+        if (this.head !== null)
+        {
             newNode = this.head.data;
             this.head = this.head.next;
         }
@@ -58,12 +60,11 @@ class Deque
         {
             return 0;
         }
-        if (this.head == this.tail)
+        if(this.head == this.tail)
         {
             var temp=this.head.data;
             this.head = null;
-            
-             return temp;
+            return temp;
              
         } 
         else 
@@ -76,13 +77,10 @@ class Deque
             var temp = current.next.data;
             current.next = null;
             this.tail = current;
-           // console.log('Temp :',temp);
             return temp;
         }
-        
-      
     }
-
+    
     Size()
     {
         return this.size;

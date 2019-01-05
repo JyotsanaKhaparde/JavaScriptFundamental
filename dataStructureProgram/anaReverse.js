@@ -12,16 +12,17 @@
 var Utility = require('../utility/Utility');
 var linkedStack = require('../dataStructureProgram/Stack.js');
 
-function printAnaprimes() {
+function printAnaprimes()
+{
     var stackLink = new linkedStack.Stack;
 
-    // var Utility = require('../utility/utility');
     var show = require('util');
 
     var anaPrimes = [[]];
     anaPrimes = Utility.findAnaPrime(0, 1000);
 
-    for (let i = 0; i < anaPrimes.length; i++) {
+    for (let i = 0; i < anaPrimes.length; i++)
+    {
         stackLink.push(anaPrimes[i]);
     }
 
@@ -35,4 +36,5 @@ function printAnaprimes() {
     console.log();
     stackLink.displayReverse(top);
 }
+
 printAnaprimes();

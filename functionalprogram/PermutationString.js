@@ -25,6 +25,6 @@ rl.question('Enter a string :',(string)=>
        arr.push(str.charAt(i.toString()));
    }
    
-    utility.strIterativePermutation(arr,0);
-    process.exit();
+       utility.strIterativePermutation(arr,0);
+       process.exit();
 });
