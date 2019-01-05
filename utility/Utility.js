@@ -17,6 +17,40 @@ module.exports = {
 
     },
 
+  //*************************************************************************** */  
+
+    /**
+     * @purpose Read all the contents from file
+     * @param filename is file name to read data
+     */
+    readAllFromFile(filename)
+    {
+        const fileStream = require('fs');
+        var file = fileStream.readFileSync(filename,'utf8');
+        var fileToArray = [];
+        fileToArray = file.split(" ",file.length);
+        return fileToArray;
+    },
+/*****************************************************************************/
+    /**
+     * @purpose To write all the contents of array into the Output File
+     * @param filename is name of file
+     * @param array is an array to write into file
+     */
+    writeAllToFile(filename,array)
+    {
+        const fileStream = require('fs');
+        var arrToString = array.toString();
+        fileStream.writeFile(filename,arrToString,(err) =>
+        {  
+            // throws an error, you could also catch it here
+            if (err) throw err;     
+            // success case, the file was saved
+            console.log('File saved!');
+        });
+    },
+
+
 
     //*********************************************************************************
 
