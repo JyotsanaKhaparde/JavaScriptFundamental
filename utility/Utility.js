@@ -2489,6 +2489,73 @@ binomialCoeff( n, k)
         return true;
     },
 
+//***************************************************************************** */
+
+    /**
+     * @purpose To validate user input name
+     * @param str name of user
+     */
+    validateName(str)
+    {
+        //console.log("name :",str);
+        var regex = /^[a-zA-Z]{2,30}$/;
+
+        if (regex.test(str)) 
+            return true;
+        else 
+            return false;
+    },
+/*****************************************************************************/
+    /**
+     * @purpose To validate user input contact
+     * @param number contact of user
+     */
+
+    validateContact(number)
+    {
+        var regex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+        if (regex.test(number)) 
+            return true;
+        else 
+            return false;
+    },
+/*****************************************************************************/
+    /**
+     * @purpose To display the output of regex.
+     * @param file input readed file
+     * @param fName first name of user 
+     * @param fullName full name of user
+     * @param contact contact of user
+     * @param today today's date
+     */
+    displayRegex(file,fName,fullName,contact,today)
+    {
+        var utility = require('../utility/Utility');
+        var str = file.replace("<<name>>",fName).replace("<<full name>>",fullName).replace("xxxxxxxxxx",contact).replace("<<dd-mm-yyyy>>", today);
+        console.log("Updated file..");
+        console.log(str);
+        utility.writeToFile("regexOuput.txt",str);
+    },
+/*****************************************************************************/
+    /**
+     * @purpose To write all the contents  into the Output File
+     * @param filename is name of file
+     * @param str is a string to write into file
+     */
+    writeToFile(filename,str)
+    {
+        const fileStream = require('fs');
+        var arrToString = str.toString();
+        fileStream.writeFile(filename,arrToString,(err) =>
+        {  
+            // throws an error, you could also catch it here
+            if (err) throw err;     
+            // success case, the file was saved
+            console.log('File saved!');
+        });
+    },
+/*****************************************************************************/
+
 
 
  };

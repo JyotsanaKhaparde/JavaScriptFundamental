@@ -1,0 +1,73 @@
+{
+    "Rice": [
+        {
+            "name": "jyotsanakha",
+            "weight": "55",
+            "price": "55"
+        },
+        {
+            "name": "aaaa",
+            "weight": "10",
+            "price": "20"
+        },
+        {
+            "name": "simran",
+            "weight": "22",
+            "price": "2"
+        },
+        {
+            "name": "kkkk",
+            "weight": "22",
+            "price": "2"
+        },
+        {
+            "name": "lll",
+            "weight": "22",
+            "price": "1"
+        }
+    ],
+    "pulses": [
+        {
+            "name": "basmati",
+            "weight": "10",
+            "price": "1500"
+        },
+        {
+            "name": "ashirwad",
+            "weight": "20",
+            "price": "1600"
+        },
+        {
+            "name": "ooo",
+            "weight": "22",
+            "price": "2"
+        },
+        {
+            "name": "ttt",
+            "weight": "33",
+            "price": "2"
+        },
+        {
+            "name": "uuu",
+            "weight": "33",
+            "price": "3"
+        }
+    ],
+    "Wheats": [
+        {
+            "name": "jsk",
+            "weight": "60",
+            "price": "2000"
+        },
+        {
+            "name": "jyo",
+            "weight": "5",
+            "price": "5"
+        },
+        {
+            "name": "shweta",
+            "weight": "55",
+            "price": "55"
+        }
+    ]
+}
