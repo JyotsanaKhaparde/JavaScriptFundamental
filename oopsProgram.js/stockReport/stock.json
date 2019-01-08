@@ -1,0 +1,28 @@
+{
+    "shares": [
+        {
+            "stock": "prachiiiii",
+            "noOFShares": "2",
+            "price": "50",
+            "total": 100
+        },
+        {
+            "stock": "jyotsana",
+            "noOFShares": "500",
+            "price": "5",
+            "total": 100
+        },
+        {
+            "stock": "kp",
+            "noOFShares": "100",
+            "price": "2",
+            "total": 200
+        },
+        {
+            "stock": "khaparde",
+            "noOFShares": "20",
+            "price": "2",
+            "total": 40
+        }
+    ]
+}

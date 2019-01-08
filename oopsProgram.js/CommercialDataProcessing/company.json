@@ -1,0 +1,34 @@
+{
+    "company": [
+        {
+            "symbol": "TATA",
+            "pricePerShares": "100",
+            "totalShares": "10"
+        },
+        {
+            "symbol": "TCS",
+            "pricePerShares": "200",
+            "totalShares": "20"
+        },
+        {
+            "symbol": "INFOSYS",
+            "pricePerShares": "400",
+            "totalShares": "40"
+        },
+        {
+            "symbol": "MAHINDRA",
+            "pricePerShares": "1000",
+            "totalShares": "200"
+        },
+        {
+            "symbol": "NICE",
+            "pricePerShares": "1000",
+            "totalShares": "2000"
+        },
+        {
+            "symbol": "BRIDGELAB",
+            "pricePerShares": "400",
+            "totalShares": "600"
+        }
+    ]
+}

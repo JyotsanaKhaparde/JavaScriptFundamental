@@ -1,0 +1,46 @@
+{
+    "customer": [
+        {
+            "customerId": 1111,
+            "customerName": "simran",
+            "symbol": "",
+            "amount": 0,
+            "shares": 0
+        },
+        {
+            "customerId": 2222,
+            "customerName": "jyotsana",
+            "symbol": "",
+            "amount": 0,
+            "shares": 0
+        },
+        {
+            "customerId": 3333,
+            "customerName": "rupali",
+            "symbol": "",
+            "amount": 0,
+            "shares": 0
+        },
+        {
+            "customerId": 4444,
+            "customerName": "prachi",
+            "symbol": "",
+            "amount": 0,
+            "shares": 0
+        },
+        {
+            "customerId": "6666",
+            "customerName": "suraj",
+            "symbol": "",
+            "amount": 6000,
+            "shares": 0
+        },
+        {
+            "customerId": "7777",
+            "customerName": "sanjana",
+            "symbol": "",
+            "amount": 0,
+            "shares": 0
+        }
+    ]
+}

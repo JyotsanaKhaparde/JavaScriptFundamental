@@ -1,0 +1,32 @@
+{
+    "transaction": [
+        {
+            "symbol": "TATA",
+            "customerId": "1111",
+            "type": "buy",
+            "date": "",
+            "numberOfShares": ""
+        },
+        {
+            "symbol": "TCS",
+            "customerId": "2222",
+            "type": "sell",
+            "date": "",
+            "numberOfShares": ""
+        },
+        {
+            "symbol": "WIPRO",
+            "customerId": "3333",
+            "type": "buy",
+            "date": "",
+            "numberOfShares": ""
+        },
+        {
+            "symbol": "INFOSYS",
+            "customerId": "4444",
+            "type": "sell",
+            "date": "",
+            "numberOfShares": ""
+        }
+    ]
+}
