@@ -1,5 +1,12 @@
+/***********************************************************************************
+ *  Purpose         : Create a JSON file having Inventory Details for Rice, Pulses and Wheats
+                      with properties name, weight, price per kg.
+ *  @file           : stockLinkedList.js
+ *  @author         : Jyotsana Khaparde
+ *  @version        : v10.11.0
+ *  @since          : 07-01-2019
+ **********************************************************************************/
 var read = require('readline-sync');
-//var utility =require('/home/d/Desktop/labsfirst/dataStructures/utility/utilityData.js');
 var fs=require('fs');
 
 function inventory()

@@ -29,6 +29,11 @@
             "symbol": "BRIDGELAB",
             "pricePerShares": "400",
             "totalShares": "600"
+        },
+        {
+            "symbol": "krish",
+            "pricePerShare": "12",
+            "totalShare": "67"
         }
     ]
 }

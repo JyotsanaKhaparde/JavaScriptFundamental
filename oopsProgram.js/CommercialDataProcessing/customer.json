@@ -4,28 +4,28 @@
             "customerId": 1111,
             "customerName": "simran",
             "symbol": "",
-            "amount": 0,
-            "shares": 0
+            "amount": 500100100,
+            "shares": 200
         },
         {
             "customerId": 2222,
             "customerName": "jyotsana",
             "symbol": "",
-            "amount": 0,
-            "shares": 0
+            "amount": 600,
+            "shares": 20
         },
         {
             "customerId": 3333,
             "customerName": "rupali",
             "symbol": "",
-            "amount": 0,
+            "amount": 700,
             "shares": 0
         },
         {
             "customerId": 4444,
             "customerName": "prachi",
             "symbol": "",
-            "amount": 0,
+            "amount": 800,
             "shares": 0
         },
         {
@@ -38,6 +38,32 @@
         {
             "customerId": "7777",
             "customerName": "sanjana",
+            "symbol": "",
+            "amount": 900,
+            "shares": 0
+        },
+        {
+            "customerId": "9999",
+            "customerName": "sid"
+        },
+        {
+            "customerId": "1200",
+            "customerName": "priyanka"
+        },
+        {
+            "customerId": "1234",
+            "customerName": "siddharth"
+        },
+        {
+            "customerId": "4567",
+            "customerName": "sapna",
+            "symbol": "",
+            "amount": 500,
+            "shares": 5
+        },
+        {
+            "customerId": "9876",
+            "customerName": "kamal",
             "symbol": "",
             "amount": 0,
             "shares": 0
