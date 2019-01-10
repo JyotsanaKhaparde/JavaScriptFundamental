@@ -16,6 +16,7 @@ class Stock{
         this.total=total;
     }
 }
+//var obj = new Stock();
 /**
  * export module
  */

@@ -230,7 +230,3 @@
 
     }
     commercial();
-
-    module.exports = {
-        commercial
-}

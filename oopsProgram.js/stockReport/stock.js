@@ -7,13 +7,29 @@
  *  @since          : 08-01-2019
  **********************************************************************************/
 
+var StockPortfolio = require('./stockPortfolio');
+var fs =  require('fs');
+var data = fs.readFileSync('stock.json','utf8');
+var jsonData = JSON.parse(data);
 
-    var StockPortfolio = require('./stockPortfolio');
-    var fs =  require('fs');
-    var data = fs.readFileSync('stock.json','utf8');
-    var jsonData = JSON.parse(data);
-
-    function stock()
+class Stock{
+    /**
+     * 
+     * @param {name of stock} stock 
+     * @param {number of shares} noOFShares 
+     * @param {price of shares} price 
+     * @param {total } total 
+     */
+    constructor(stock,noOFShares,price,total){
+        this.stock=stock;
+        this.noOFShares=noOFShares;
+        this.price=price;
+        this.total=total;
+    }
+}
+    class StockProgram extends Stock
+    {
+    stockP()
     {
         var read = require('readline-sync');
 
@@ -37,7 +53,7 @@
             var passToClass = new StockPortfolio.Stock(name,noOFShares,price,total);
 
             jsonData.shares.push(passToClass);
-            stock();
+            obj2.stockP();
         
             
         }
@@ -49,7 +65,7 @@
          */
         
             console.log(jsonData);
-            stock();
+            obj2.stockP();
         }
         else  
         if(choice == 3)
@@ -58,7 +74,7 @@
                 if (err) throw err
                 console.log('Done!');
             })
-            stock();
+            obj2.stockP();
         }
         else 
         if(choice == 4)
@@ -74,7 +90,7 @@
                 }
             }
             console.log("after deletion data is",jsonData);
-            stock();
+            obj2.stockP();
         }
         else
         if(choice == 5)
@@ -92,7 +108,7 @@
                     {
                         var Newname = read.question('Enter new stock name : ');
                         jsonData.shares[i].stock=Newname;
-                        stock();
+                        obj2.stockP();
                     }
                     else 
                     if(choice2 == 2)
@@ -101,7 +117,7 @@
                         jsonData.shares[i].noOFShares = NewNumberOfShares;
                         var newTotal = parseInt(NewNumberOfShares)*parseInt(jsonData.shares[i].price);
                         jsonData.shares[i].total = newTotal;
-                        stock();
+                        obj2.stockP();
                     }
                     else 
                     if(choice2 == 3)
@@ -110,7 +126,7 @@
                         jsonData.shares[i].price = newPrice;
                         var newTotal = parseInt(jsonData.shares[i].noOFShares)*parseInt(newPrice);
                         jsonData.shares[i].total = newTotal;
-                        stock();
+                        obj2.stockP();
                     }
                 }
 
@@ -124,4 +140,8 @@
 
         }
 
-    }stock();
+    }
+}
+//var obj1 = new Stock();
+var obj2 = new StockProgram();
+obj2.stockP();
