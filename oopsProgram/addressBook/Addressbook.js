@@ -23,40 +23,46 @@ contactRestriction = /[0-9]/g;
 class Address
 {
     constructor()
-        {
+    {
             
-        }
+    }
     createAddress()
     {
         console.log("**Please enter info to create a address profile***");
         var name = read.question("Please enter your first name: ");
         var lastName = read.question("Please enter your last name: ");
+        //validate name and lastname
         if(nameRestriction.test(name) == false && name.length>3 &&  nameRestriction.test(lastName) == false) 
         {
             console.log("Invalid name!");
             return false;
         }
         console.log("Please enter your address");
+        //take input from user
         var street = read.question("Enter street: ");
         var city = read.question("Enter city: ");
+        //validate city
         if(nameRestriction.test(city) == false) 
         {
             console.log("Invalid  city name!");
             return false;
         }
             var state = read.question("Enter state: ");
+            //validate state
             if(nameRestriction.test(state) == false) 
             {
                 console.log("Invalid  state name!");
                 return false;
             }
             var nation = read.question("Enter nationality: ");
+            //validate nation
             if(nameRestriction.test(nation) == false)
             {
                 console.log("Invalid Nationality!");
                 return false;
             }
             var zip = read.question("Enter Zip/Postal code: ");
+            //validate zip
             if(contactRestriction.test(zip) == false || zip.length !=6)
             {
                 console.log("Invalid Zipcode!!please enter minimum 6 digits ");
@@ -64,11 +70,13 @@ class Address
             }
 
             var phoneNum = read.question("Enter phone number: ");
+            //validate phone number
             if(contactRestriction.test(phoneNum) == false  || phoneNum.length !=10 )
             {
                 console.log("Invalid number!");
                 return false;
             }
+            //pushing data into person.json
             arrayOfObjects.Person.push({
                 Name: name,
                 LastName: lastName,
@@ -82,8 +90,6 @@ class Address
                 }
                 })
                 address();
-
-
                 console.log("Address updated succesfully!");
                 console.log("Your information as per our record is: \r\n First Name: "+name+"\r\nLast Name: "+lastName+"\r\nStreet: "+street+"\r\nCity: "+city+"\r\nState: "+state+"\r\nNationality: "+nation);
     }
@@ -99,13 +105,15 @@ class Address
         }    
             return 0;  
     }
+    //perform sorting
     sorting()
     {
-        console.log(arrayOfObjects.Person.sort(this.compare1));//this is a keyword
+        console.log(arrayOfObjects.Person.sort(this.compare1));
     }
                            
     openProfile()
-    {   var temp = -1;
+    { 
+        var temp = -1;
         if(arrayOfObjects.Person.length > 0)
         {
             for(var i=0;i<arrayOfObjects.Person.length;i++)
@@ -115,9 +123,10 @@ class Address
             var update = read.question("Please enter the name of profile: ");
             for(var k=0; k<arrayOfObjects.Person.length;k++)
             {
-
+                //compare entered new name and alredy present name in person.json 
                 if(update == arrayOfObjects.Person[k].Name)
-                {   temp = k;
+                { 
+                    temp = k;
                     console.log("Please select an option to modify your profile ");
                     console.log("1: Update");
                     console.log("2: Delete");
@@ -129,6 +138,7 @@ class Address
                     
                     switch(parseInt(choice2))
                     {
+                        //update
                         case 1 : 
                             console.log("What do you want to update? ");
                             console.log("1: Street");
@@ -141,6 +151,7 @@ class Address
                             var choice3 = read.question("Please enter your choice: ");
                             switch(parseInt(choice3))
                             {
+                                //street
                                 case 1:
                                 var sUpdate = read.question("Enter the new street number: ");
                                 if(nameRestriction.test(sUpdate) == false && sUpdate.length>3) 
@@ -160,13 +171,11 @@ class Address
                                             "Zip": arrayOfObjects.Person[k]["Address"].Zip,
                                             "PhoneNum": arrayOfObjects.Person[k] ["Address"].PhoneNum
                                         }
-
                                     }
                                     arrayOfObjects.Person[k]=obj;
                                     address();
-
                                     break;
-
+                                //city name    
                                 case 2:
                                 var cUpdate = read.question("Enter the new city name: ");
                                 if(nameRestriction.test(cUpdate) == false && cUpdate.length>3) 
@@ -186,14 +195,13 @@ class Address
                                             "Zip": arrayOfObjects.Person[k]["Address"].Zip,
                                             "PhoneNum": arrayOfObjects.Person[k] ["Address"].PhoneNum
                                         }
-
                                 }
                                 arrayOfObjects.Person[k]=obj;
                                     
                                 address();
                                      
                                 break;
-
+                                //state name
                                 case 3:
                                     var stUpdate = read.question("Enter the new state name: ");
                                     if(nameRestriction.test(stUpdate) == false && stUpdate.length>3) 
@@ -213,14 +221,11 @@ class Address
                                             "Zip": arrayOfObjects.Person[k]["Address"].Zip,
                                             "PhoneNum": arrayOfObjects.Person[k] ["Address"].PhoneNum
                                         }
-
                                     }
                                     arrayOfObjects.Person[k]=obj;
-                                    
                                     address();
-
                                     break;
-
+                                //nation    
                                 case 4:
                                 var nUpdate = read.question("Enter the new nation name: ");
                                 if(nameRestriction.test(nUpdate) == false && nUpdate.length>3) 
@@ -244,9 +249,8 @@ class Address
                                     }
                                     arrayOfObjects.Person[k]=obj;
                                     address();
-
                                     break;
-
+                                //zip code        
                                 case 5:
                                 var zUpdate = read.question("Enter the new zip code: ");
                                 if(contactRestriction.test(zUpdate) == false || zUpdate.length !=6 )
@@ -270,9 +274,8 @@ class Address
                                 }
                                 arrayOfObjects.Person[k]=obj;
                                 address();
-
                                 break;
-
+                                //phone number
                                 case 6:
                                 var pUpdate = read.question("Enter the new phone number: ");
                                 if(contactRestriction.test(pUpdate) == false  || pUpdate.length !=10 )
@@ -293,19 +296,16 @@ class Address
                                             "PhoneNum": pUpdate
                                             }
                                 }
-                                arrayOfObjects.Person[k]=obj;
-                                        
+                                arrayOfObjects.Person[k]=obj;        
                                 address();
                                 break;
-    
                                 case 7:
                                     console.log("Exit!");
-                                    address();
-                                     
+                                    address();  
                                     break;
                             }
                             break;
-                                        
+                            //delete            
                             case 2:
                                 var update = read.question("Please enter the index of item you want to delete: ");
                                 delete  arrayOfObjects.Person[update];
@@ -316,32 +316,25 @@ class Address
                                         arrayOfObjects.Person.splice(k,1);
                                     }
                                 }
-
                                 address(); 
-                                break;
-    
+                                break;   
                             case 3:
                                 this.createAddress();
-                                break;
-    
+                                break;   
                             case 4:
                                 this.sorting();
                                 address();
                             break;
-    
                             case 5:
                                 address();     
-                                break;
-    
+                                break; 
                             case 6:
                                 console.log("Exit");
                                 address();
                                 break;
-    
                             default:
                                 console.log("Please enter valid option");
                                 break;
-                
                     }
                 }
             }               
@@ -359,7 +352,6 @@ class Address
         }
     }
 }
-    
     function address()
     {
         var a = new Address();
@@ -369,16 +361,19 @@ class Address
         console.log("3: Save");
         console.log("4: Exit");
         var choice1 = read.question("Please enter your choice: ");
+        //create address profile
         if(choice1 == 1)
         {
             a.createAddress();
             address();
         }
+        //open address book
         if(choice1 == 2)
         {
             a.openProfile();
             address();
         }
+        //save
         if(choice1 == 3)
         {
             fs.writeFileSync('./Addressbook.json', JSON.stringify(arrayOfObjects),'utf-8', function(err){
@@ -386,7 +381,7 @@ class Address
                 console.log('Done!');
             })
         }
-        
+        //Exit
         if(choice1 == 4)
         {
             console.log("Exit!");

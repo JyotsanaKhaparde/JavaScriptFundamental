@@ -1,14 +1,16 @@
 /**
  * create stock report class 
  */
-class companyStock{
+class companyStock
+{
     /**
      * @param {name of company} symbol 
      * @param {price per shares} pricePerShares 
      * @param {total shares} totalShares 
      */
 
-    constructor(symbol,pricePerShares,totalShares){
+    constructor(symbol,pricePerShares,totalShares)
+    {
         this.symbol= symbol;
         this.pricePerShares= pricePerShares;
         this.totalShares= totalShares
@@ -18,6 +20,7 @@ class companyStock{
 /**
  * export module
  */
-module.exports={
+module.exports=
+{
     companyStock
 }

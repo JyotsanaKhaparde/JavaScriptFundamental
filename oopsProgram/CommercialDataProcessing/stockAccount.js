@@ -66,7 +66,7 @@
                     if(choice4 == 1)
                     {
                         var Newamount = read.question('Enter amount you want to add : ');
-                        jsoncustomerData.customer[i].amount =  parseInt(jsoncustomerData.customer[i].amount+parseInt(Newamount));
+                        jsoncustomerData.customer[i].amount =  parseInt(Number(jsoncustomerData.customer[i].amount)+Number(Newamount));
                         console.log(jsoncustomerData);
                        
                     } 
@@ -85,7 +85,7 @@
                                 console.log('company,s total shares: ',jsoncompanyData.company[j].totalShares);
                                      
                                 jsoncompanyData.company[j].totalShares =parseInt(jsoncompanyData.company[j].totalShares - buyShares); 
-                                jsoncustomerData.customer[i].shares =parseInt(jsoncustomerData.customer[i].shares + parseInt(buyShares));
+                                jsoncustomerData.customer[i].shares =parseInt(Number(jsoncustomerData.customer[i].shares) + Number(buyShares));
                                 jsontransactionData.transaction[i].type = "buy";
                                 var d = new Date();
                                 var date = d.getDate();
@@ -121,7 +121,7 @@
                             {
                                 var sellShares = read.question('Enter shares you want to sell:');
                                 sellShares = parseInt(sellShares);
-                                jsoncompanyData.company[z].totalShares =parseInt(jsoncompanyData.company[z].totalShares +parseInt(sellShares)); 
+                                jsoncompanyData.company[z].totalShares =parseInt(Number(jsoncompanyData.company[z].totalShares) + Number(sellShares)); 
                                 jsoncustomerData.customer[i].shares =parseInt(jsoncustomerData.customer[i].shares - sellShares);
                                 jsontransactionData.transaction[i].type = "sell";
                                 var d = new Date();
@@ -198,12 +198,9 @@
                     }
                 }
                 console.log(jsoncompanyData);
-
-
             }
             
             commercial();
-
         }
         if(choice == 4)
         {
@@ -220,7 +217,6 @@
                 console.log('Done!');
             })
             commercial();
-
         }
         if(choice == 5)
         {

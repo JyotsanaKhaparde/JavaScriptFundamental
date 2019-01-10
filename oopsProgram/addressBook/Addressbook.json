@@ -1,0 +1,40 @@
+{
+    "Person": [
+        {
+            "Name": "bgffru",
+            "LastName": "jhdj",
+            "Address": {
+                "Street": "34",
+                "City": "ffmhmh",
+                "State": "gfxdgmcjmng",
+                "Nation": "bshzyh",
+                "Zip": "435265",
+                "PhoneNum": "4684523447"
+            }
+        },
+        {
+            "Name": "nikhil",
+            "LastName": "khaparde",
+            "Address": {
+                "Street": "1234",
+                "City": "mumbai",
+                "State": "chhattishgarh",
+                "Nation": "india",
+                "Zip": "123456",
+                "PhoneNum": "7810938576"
+            }
+        },
+        {
+            "Name": "simran",
+            "LastName": "bhatiya",
+            "Address": {
+                "Street": "34",
+                "City": "serty",
+                "State": "maharashtra",
+                "Nation": "indian",
+                "Zip": "678678",
+                "PhoneNum": "6459812034"
+            }
+        }
+    ]
+}

@@ -59,21 +59,7 @@ class Queue
     {
         return this.head == null;
     }
-    display2()
-    {
-        var t = this.head;
-        while(t!=null)
-        {
-            show.print(t.data);
-            if(t.next!=null)
-            show.print("  ");
-            t = t.next;
-        }
-        console.log();
-        console.log();
-    }       
-    
-    
+ 
 }
 
 

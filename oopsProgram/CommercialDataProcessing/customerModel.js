@@ -1,7 +1,8 @@
 /**
  * create stock report class 
  */
-class customerStock{
+class customerStock
+{
     /**
      * 
      * @param {name of company} symbol 
@@ -11,7 +12,8 @@ class customerStock{
      * @param {shares} shares 
      */
     
-    constructor(symbol,customerId,customerName,amount,shares){
+    constructor(symbol,customerId,customerName,amount,shares)
+    {
             
         this.symbol= symbol;
         this.customerId = customerId;
@@ -24,6 +26,7 @@ class customerStock{
 /**
  * export module
  */
-module.exports={
+module.exports=
+{
     customerStock
 }
